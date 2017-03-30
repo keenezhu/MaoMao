@@ -33,10 +33,9 @@ public class NotificationSender {
 	 */
 	public void sendNotification() {
 		
-		Notification notiProto = new Notification();
-		NotificationFooter nf = new NotificationFooter();
-		// initialize nf
-		notiProto.setFooter(nf);
+		Notification notiProto = new Notification();		
+		// initialize notiProto
+		
 		long startTime=System.currentTimeMillis();
         //根据数据源构造通知对象，并将构造后的通知对象发出		
 		for (HashMap<String, String> noti : notis) {

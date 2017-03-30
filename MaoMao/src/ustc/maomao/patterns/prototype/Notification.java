@@ -21,7 +21,10 @@ public class Notification implements Cloneable{
         private String content;
         private NotificationFooter footer;
         
-             
+        public Notification(){
+        	footer=new NotificationFooter();
+        	//initialize footer
+        }
         
 		/* 克隆Notification对象（浅拷贝--shallow copy，共享footer）
 		 * @see java.lang.Object#clone()
@@ -67,11 +70,5 @@ public class Notification implements Cloneable{
 		public NotificationFooter getFooter() {
 			return footer;
 		}
-		/**
-		 * @param footer the footer to set
-		 */
-		public void setFooter(NotificationFooter footer) {
-			this.footer = footer;
-		}
-        
+		        
 }
