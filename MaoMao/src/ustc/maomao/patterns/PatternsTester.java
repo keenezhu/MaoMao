@@ -14,7 +14,7 @@ import ustc.maomao.patterns.prototype.ProtoTester;
  * 
  *         designed by Keene, implemented by {Keene}
  * 
- *         调用每个模式包中的测试器，即可完成对应的模式测试
+ *         调用每个模式包中的测试器，即可完成对应的模式示例测试
  *      
  */
 public class PatternsTester {
