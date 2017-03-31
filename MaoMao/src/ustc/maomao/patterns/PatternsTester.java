@@ -3,7 +3,7 @@
  */
 package ustc.maomao.patterns;
 
-import ustc.maomao.patterns.singleton.SingletonTester;
+import ustc.maomao.patterns.prototype.ProtoTester;
 
 /**
  * @author Keene. Mail: waterzhj@ustc.edu.cn
@@ -25,7 +25,7 @@ public class PatternsTester {
 	public static void main(String[] args) {
 		
 		//将SingletonTester替换成目标模式测试器
-		SingletonTester.test();
+		ProtoTester.test();
 		
 	}
 

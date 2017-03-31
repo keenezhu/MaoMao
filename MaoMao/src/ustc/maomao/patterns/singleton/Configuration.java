@@ -15,16 +15,16 @@ package ustc.maomao.patterns.singleton;
  */
 public class Configuration {
 	
-	//c是静态域，将在Configuration类首次加载时初始化
-	private static Configuration c=createInstance();
+	//cosConfig是静态域，将在Configuration类首次加载时初始化
+	private static Configuration cosConfig=createInstance();
 	
 	private Configuration(){};
 	
 	/**
-	 * @return c 已根据xml配置文件进行初始化后的对象
+	 * @return c 已根据COS的xml配置文件进行初始化后的对象
 	 */
 	private static Configuration createInstance(){
-		c=new Configuration();
+		Configuration c=new Configuration();
 		//initialize c instance from xml
 		//other operations
 		return c;
@@ -32,10 +32,10 @@ public class Configuration {
 	
 	
 	/**
-	 * @return c 共享给所有的客户对象//c是静态域，将在Configuration类首次加载时初始化
+	 * @return cosConfig 共享给所有的客户对象//cosConfig是静态域，将在Configuration类首次加载时初始化
 	 */
 	public static Configuration getInstance(){		
-		return c;
+		return cosConfig;
 	}
 
 }

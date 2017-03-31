@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <projectDescription>
 	<name>MaoMao</name>
-	<comment></comment>
+	<comment>this project builds samples for GoF patterns. its license is MIT</comment>
 	<projects>
 	</projects>
 	<buildSpec>

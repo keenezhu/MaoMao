@@ -13,7 +13,7 @@ package ustc.maomao.patterns.prototype;
  * 
  *         designed by keene, implemented by {coder name}
  * 
- *         COS系统通知对象类型（通知标题，通知内容，尾注等）
+ *         COS系统通知原型对象类型（包含域通知标题，通知内容，尾注等）
  *      
  */
 public class Notification implements Cloneable{

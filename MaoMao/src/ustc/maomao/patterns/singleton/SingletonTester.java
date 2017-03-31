@@ -12,7 +12,7 @@ import java.util.List;
  * 
  *         designed by Keene, implemented by {Keene}
  * 
- *         测试Singgle类的工作情况
+ *         测试Singleton类的工作情况
  *      
  */
 public class SingletonTester {
@@ -33,12 +33,12 @@ public class SingletonTester {
     		   client2s.add(cc2);
     	   }
     	   
-    	   //ConfigurationClient1对象使用Configuration对象
+    	   //ConfigurationClient1对象使用Configuration单例对象
     	   for (ConfigurationClient1 cc1:client1s){
     		   cc1.useConfiguration();
     	   }
     	   
-    	   //ConfigurationClient2对象使用Configuration对象
+    	   //ConfigurationClient2对象使用Configuration单例对象
     	   for (ConfigurationClient2 cc2:client2s){
     		   cc2.useConfiguration();
     	   }
