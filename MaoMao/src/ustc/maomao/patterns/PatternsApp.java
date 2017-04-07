@@ -17,7 +17,7 @@ import ustc.maomao.patterns.singleton.SingletonTester;
  *         调用每个模式包中的测试器，即可完成对应的模式示例测试
  *      
  */
-public class PatternsTester {
+public class PatternsApp {
 
 	/**
 	 * @param args
