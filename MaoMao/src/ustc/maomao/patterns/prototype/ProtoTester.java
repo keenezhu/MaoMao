@@ -1,24 +1,22 @@
-/**
- * 
- */
+
 package ustc.maomao.patterns.prototype;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
+ 
 /**
- * @author keene C. zhu
+ * @author Keene. Mail: waterzhj@ustc.edu.cn
  * 
- *         该代码遵循Apache License Version 2.0, January
- *         2004。详细见http://www.apache.org/licenses/
+ *         该代码遵循MIT License, 详细见 https://mit-license.org/
  * 
- *         Copyright {2015-2017} {keene C. zhu}
+ *         Copyright {2017} {Keene}
  * 
- *         designed by keene, implemented by {coder name}
+ *         designed by Keene, implemented by {Keene}
  * 
- *         原型模式的测试器
- * 
+ *         原型模式测试器
+ *      
  */
 public class ProtoTester {
 

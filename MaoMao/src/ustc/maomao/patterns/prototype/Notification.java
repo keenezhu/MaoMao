@@ -1,22 +1,21 @@
-/**
- * 
- */
+
 package ustc.maomao.patterns.prototype;
 
+
 /**
- * @author keene C. zhu
+ * @author Keene. Mail: waterzhj@ustc.edu.cn
  * 
- *         该代码遵循Apache License Version 2.0, January
- *         2004。详细见http://www.apache.org/licenses/
+ *         该代码遵循MIT License, 详细见 https://mit-license.org/
  * 
- *         Copyright {2015-2017} {keene C. zhu}
+ *         Copyright {2017} {Keene}
  * 
- *         designed by keene, implemented by {coder name}
+ *         designed by Keene, implemented by {Keene}
  * 
  *         COS系统通知原型对象类型（包含域通知标题，通知内容，尾注等）
  *      
  */
 public class Notification implements Cloneable{
+	
         private String title;
         private String content;
         private NotificationFooter footer;
@@ -66,8 +65,9 @@ public class Notification implements Cloneable{
 		}
 		/**
 		 * @return the footer
-		 */
+		 */		
 		public NotificationFooter getFooter() {
+			
 			return footer;
 		}
 		        

@@ -1,6 +1,4 @@
-/**
- * 
- */
+
 package ustc.maomao.patterns.prototype;
 
 import java.util.HashMap;
@@ -8,18 +6,18 @@ import java.util.List;
 import java.util.Queue;
 import java.util.concurrent.LinkedBlockingQueue;
 
+
 /**
- * @author keene C. zhu
+ * @author Keene. Mail: waterzhj@ustc.edu.cn
  * 
- *         该代码遵循Apache License Version 2.0, January
- *         2004。详细见http://www.apache.org/licenses/
+ *         该代码遵循MIT License, 详细见 https://mit-license.org/
  * 
- *         Copyright {2015-2017} {keene C. zhu}
+ *         Copyright {2017} {Keene}
  * 
- *         designed by keene, implemented by {coder name}
+ *         designed by Keene, implemented by {Keene}
  * 
  *         发送Notification的客户端
- * 
+ *      
  */
 public class NotificationSender {
 
@@ -50,6 +48,9 @@ public class NotificationSender {
 		System.out.println("共用时毫秒："+(System.currentTimeMillis()-startTime));		
 	}
 
+	/**
+	 * @param noti
+	 */
 	private void send(Notification noti) {
 		sendQueue.add(noti);		
 		//other operations

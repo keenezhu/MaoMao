@@ -12,12 +12,13 @@ import java.util.List;
  * 
  *         designed by Keene, implemented by {Keene}
  * 
- *         测试Singleton类的工作情况
+ *         Singleton模式的测试器
  *      
  */
 public class SingletonTester {
-	
-       public static void test(){
+	     
+  
+    public static void test(){
     	   
     	   //构造5个使用Configuration的ConfigurationClient1对象
     	   List<ConfigurationClient1> client1s=new ArrayList<ConfigurationClient1>();
