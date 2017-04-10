@@ -35,8 +35,8 @@ public class XMLBuilder implements TextBuilder {
 	 */
 	@Override
 	public void convertmType(int mType) {
-		String type="<MenuItem><MType value=";
-        type+="\""+mType+"\"/>";
+		String type="<MenuItem>\n<MType value=";
+        type+="\""+mType+"\"/>\n";
         xml.add(type);
 	}
 
@@ -46,7 +46,7 @@ public class XMLBuilder implements TextBuilder {
 	@Override
 	public void convertmName(String mName) {
 		String name="<MName value=";
-        name+="\""+mName+"\"/>";
+        name+="\""+mName+"\"/>\n";
         xml.add(name);
 	}
 
@@ -56,7 +56,7 @@ public class XMLBuilder implements TextBuilder {
 	@Override
 	public void convertmPrice(float mPrice) {
 		String price="<MPrice value=";
-        price+="\""+price+"\"/></MenuItem>";
+        price+="\""+mPrice+"\"/>\n</MenuItem>\n";
         xml.add(price);
 	}
 

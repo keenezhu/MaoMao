@@ -2,6 +2,8 @@ package ustc.maomao.patterns.builder;
 
 import java.util.List;
 
+import ustc.maomao.patterns.support.MenuItem;
+
 /**
  * @author Keene. Mail: waterzhj@ustc.edu.cn
  * 

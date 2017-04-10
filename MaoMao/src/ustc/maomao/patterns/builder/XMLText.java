@@ -14,8 +14,8 @@ package ustc.maomao.patterns.builder;
  */
 public class XMLText {
 	
-	private String xmlHeader="<?xml version=\"1.0\" encoding=\"UTF-8\"?>";
-	private String xmlBody="<MenuItems>";
+	private String xmlHeader="<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n";
+	private String xmlBody="<MenuItems>\n";
 	private String xmlFooter="</MenuItems>";
 	
 	/**

@@ -35,7 +35,7 @@ public class JSONBuilder implements TextBuilder {
 	 */
 	@Override
 	public void convertmType(int mType) {
-		jsonElement="{\"MType\":\""+mType+"\"";
+		jsonElement="\n{\"MType\":\""+mType+"\"";
 		jsonElement+=",";
 	}
 
@@ -47,7 +47,7 @@ public class JSONBuilder implements TextBuilder {
 	 */
 	@Override
 	public void convertmName(String mName) {
-		jsonElement="\"MName\":\""+mName+"\"";
+		jsonElement+="\"MName\":\""+mName+"\"";
 		jsonElement+=",";
 	}
 
@@ -58,7 +58,7 @@ public class JSONBuilder implements TextBuilder {
 	 */
 	@Override
 	public void convertmPrice(float mPrice) {
-		jsonElement="\"MPrice\":\""+mPrice+"\"}";
+		jsonElement+="\"MPrice\":\""+mPrice+"\"}";
 		json.add(jsonElement);
 	}
 
