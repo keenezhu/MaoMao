@@ -9,7 +9,7 @@ package ustc.maomao.patterns.support;
  * 
  *         designed by Keene, implemented by {Keene}
  * 
- *         图表数据源
+ *         模拟数据源
  *      
  */
 public class Data {
