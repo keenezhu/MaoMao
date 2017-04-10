@@ -1,4 +1,4 @@
-package ustc.maomao.patterns.factorymethod;
+package ustc.maomao.patterns.builder;
 
 import ustc.maomao.patterns.support.PatternTester;
 
@@ -11,19 +11,18 @@ import ustc.maomao.patterns.support.PatternTester;
  * 
  *         designed by Keene, implemented by {Keene}
  * 
- *         工厂方法模式测试器
+ *         {usage}
  *      
  */
-public class FactoryMethodTester implements PatternTester{
+public class BuilderTester implements PatternTester {
 
 	/* (non-Javadoc)
 	 * @see ustc.maomao.patterns.support.PatternTester#test()
 	 */
 	@Override
 	public void test() {
-		String fileName="test";
-		DocumentCreator dc=new PdfDocumentCreator();
-		dc.exportDocument(fileName);		
-	}	
+		
+		
+	}
 
 }

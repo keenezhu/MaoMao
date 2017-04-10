@@ -5,6 +5,8 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
+import ustc.maomao.patterns.support.PatternTester;
+
  
 /**
  * @author Keene. Mail: waterzhj@ustc.edu.cn
@@ -18,10 +20,13 @@ import java.util.List;
  *         原型模式测试器
  *      
  */
-public class ProtoTester {
+public class ProtoTester implements PatternTester {
 
-	public static void test() {
-		
+	/* (non-Javadoc)
+	 * @see ustc.maomao.patterns.support.PatternTester#test()
+	 */
+	@Override
+	public void test() {
 		List<HashMap<String, String>> dataSource = new ArrayList<HashMap<String, String>>();
         //构造测试通知的数据源
 		for (int i = 0; i < 100000; i++) {
@@ -40,7 +45,8 @@ public class ProtoTester {
 		NotificationSender ns = new NotificationSender();
 		ns.setNotis(dataSource);
 		ns.sendNotification();
-
+		
 	}
+
 
 }
