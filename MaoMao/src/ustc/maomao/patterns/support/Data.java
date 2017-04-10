@@ -1,4 +1,4 @@
-package ustc.maomao.patterns.abstractfac;
+package ustc.maomao.patterns.support;
 
 /**
  * @author Keene. Mail: waterzhj@ustc.edu.cn

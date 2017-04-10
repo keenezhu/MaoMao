@@ -1,5 +1,7 @@
 package ustc.maomao.patterns.abstractfac;
 
+import ustc.maomao.patterns.support.Data;
+
 /**
  * @author Keene. Mail: waterzhj@ustc.edu.cn
  * 
