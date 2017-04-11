@@ -72,6 +72,10 @@ public abstract class DBManager {
 		this.db = db;
 	}
 
+	/**
+	 * 数据库访问日志记录
+	 * @param operation 访问日志
+	 */
 	public abstract void log(String operation);
 
 }
