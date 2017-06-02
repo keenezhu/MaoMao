@@ -1,6 +1,7 @@
 package ustc.maomao.patterns.decorator;
 
 import ustc.maomao.patterns.support.FoodItem;
+import ustc.maomao.patterns.support.SweetLevel;
 import ustc.maomao.patterns.visitor.MealOrderVisitor;
 
 /**
@@ -16,6 +17,27 @@ import ustc.maomao.patterns.visitor.MealOrderVisitor;
  *      
  */
 public class SweetFood extends FoodDecorator {
+	
+	private SweetLevel sweetLevel=SweetLevel.Normal;//甜味等级，默认为甜
+	
+	
+
+	/**
+	 * @return the sweetLevel
+	 */
+	public SweetLevel getSweetLevel() {
+		return sweetLevel;
+	}
+
+
+	/**
+	 * @param sweetLevel the sweetLevel to set
+	 */
+	public void setSweetLevel(SweetLevel sweetLevel) {
+		System.out.println("甜味等级："+sweetLevel);
+		this.sweetLevel = sweetLevel;
+	}
+
 
 	/**
 	 * @param fi 被包装的菜品
@@ -31,19 +53,11 @@ public class SweetFood extends FoodDecorator {
 	 * @param num 菜品数量
 	 * @param level 甜味等级
 	 */
-	public void order(int num,int level){
+	public void order(int num,SweetLevel level){
 		order(num);
 		setSweetLevel(level);
 	}
 	
-	/**
-	 * 设置菜品甜味等级
-	 * @param level 等级
-	 */
-	public void setSweetLevel(int level){
-		System.out.println("   甜味等级是："+level);
-	}
-
 
 	/* (non-Javadoc)
 	 * @see ustc.maomao.patterns.decorator.FoodItem#accept(ustc.maomao.patterns.visitor.MealOrderVisitor)

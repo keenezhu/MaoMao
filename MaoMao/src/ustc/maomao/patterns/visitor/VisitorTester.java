@@ -26,6 +26,7 @@ public class VisitorTester implements PatternTester{
 		Patron p=new Patron();
 		p.orderFood();
 		p.viewOrderStatis();
+	    p.warningOrder();
 	}
 
 }

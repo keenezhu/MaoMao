@@ -1,9 +1,8 @@
 
 package ustc.maomao.patterns;
 
-import ustc.maomao.patterns.factorymethod.FactoryMethodTester;
-import ustc.maomao.patterns.singleton.SingletonTester;
 import ustc.maomao.patterns.support.PatternTester;
+import ustc.maomao.patterns.visitor.VisitorTester;
 
 /**
  * @author Keene. Mail: waterzhj@ustc.edu.cn
@@ -23,10 +22,10 @@ public class PatternsApp {
 	 * @param args
 	 */
 	
-	public static void main(String[] args) {
-		
+	public static void main(String[] args) {		
+			
 		//将SingletonTester替换成目标模式测试器
-		PatternTester pt=new SingletonTester();
+		PatternTester pt=new VisitorTester();
 		pt.test();		
 	}
 

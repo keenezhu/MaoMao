@@ -1,6 +1,7 @@
 package ustc.maomao.patterns.decorator;
 
 import ustc.maomao.patterns.support.FoodItem;
+import ustc.maomao.patterns.support.SpicyLevel;
 import ustc.maomao.patterns.visitor.MealOrderVisitor;
 
 /**
@@ -16,6 +17,23 @@ import ustc.maomao.patterns.visitor.MealOrderVisitor;
  *      
  */
 public class SpicyFood extends FoodDecorator {
+	
+	private SpicyLevel spicyLevel=SpicyLevel.Middle;//辣味等级，默认为中辣
+
+	/**
+	 * @return the spicyLevel
+	 */
+	public SpicyLevel getSpicyLevel() {
+		return spicyLevel;
+	}
+
+	/**
+	 * @param spicyLevel the spicyLevel to set
+	 */
+	public void setSpicyLevel(SpicyLevel spicyLevel) {
+		System.out.println("辣味等级："+spicyLevel);
+		this.spicyLevel = spicyLevel;
+	}
 
 	/**
 	 * @param fi 被包装的菜品
@@ -30,18 +48,10 @@ public class SpicyFood extends FoodDecorator {
 	 * @param num 菜品数量
 	 * @param level 辣味等级
 	 */
-	public void order(int num,int level){
+	public void order(int num,SpicyLevel level){
 		order(num);
 		setSpicyLevel(level);
-	}
-	
-	/**
-	 * 设置辣味等级
-	 * @param level 等级
-	 */
-	public void setSpicyLevel(int level){
-		System.out.println("   辣味等级是："+level);
-	}
+	}	
 
 	/* (non-Javadoc)
 	 * @see ustc.maomao.patterns.decorator.FoodItem#accept(ustc.maomao.patterns.visitor.MealOrderVisitor)

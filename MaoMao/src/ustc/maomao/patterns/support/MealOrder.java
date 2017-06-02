@@ -33,10 +33,10 @@ public class MealOrder {
      }
     
      /**
-      * 统计订单菜品
+      * 访问订单菜品
      * @param visitor
      */
-    public void statis(MealOrderVisitor visitor){
+    public void accept(MealOrderVisitor visitor){
     	 for (FoodItem food:foods){
     		 food.accept(visitor);
     	 }

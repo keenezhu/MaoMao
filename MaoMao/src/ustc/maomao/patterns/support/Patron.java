@@ -4,6 +4,7 @@ import ustc.maomao.patterns.decorator.SimpleFood;
 import ustc.maomao.patterns.decorator.SpicyFood;
 import ustc.maomao.patterns.decorator.SweetFood;
 import ustc.maomao.patterns.templatemethod.PayOrder;
+import ustc.maomao.patterns.visitor.FoodLevelVisitor;
 import ustc.maomao.patterns.visitor.FoodTypeVisitor;
 
 /**
@@ -33,22 +34,27 @@ public class Patron {
 		
 		
 		SimpleFood f1=new SimpleFood();
-		f1.setName("辣子鸡");
-		f1.order(1);
+		f1.setName("花生米");
+		f1.order(5);
 		order.addFood(f1);
 		
 		SimpleFood f2=new SimpleFood();
 		f2.setName("麻辣豆腐");
 		SpicyFood spicyF2=new SpicyFood(f2);		
 		spicyF2.order(2);
-		spicyF2.setSpicyLevel(3);
+		spicyF2.setSpicyLevel(SpicyLevel.Dead);
 		order.addFood(spicyF2);
 		
 		SimpleFood f3=new SimpleFood();
 		f3.setName("拔丝香蕉");
 		SweetFood sweetF3=new SweetFood(f3);
-		sweetF3.order(5, 2);
+		sweetF3.order(5, SweetLevel.Cloying);
 		order.addFood(sweetF3);
+		
+		SimpleFood f4=new SimpleFood();
+		f4.setName("皮蛋豆腐");
+		f4.order(7);
+		order.addFood(f4);
 		
 		return order;
 	}
@@ -66,8 +72,16 @@ public class Patron {
 	 */
 	public void viewOrderStatis(){
 		FoodTypeVisitor visitor=new FoodTypeVisitor();
-		order.statis(visitor);
+		order.accept(visitor);
 		visitor.displayResult();
+	}
+	
+	/**
+	 * 检查订单并提醒客户关于菜品的信息
+	 */
+	public void warningOrder(){
+		FoodLevelVisitor visitor=new FoodLevelVisitor();
+		order.accept(visitor);		
 	}
 
 }
