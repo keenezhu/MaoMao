@@ -1,5 +1,7 @@
 package ustc.maomao.patterns.support;
 
+import ustc.maomao.patterns.decorator.FoodItem;
+
 /**
  * @author Keene. Mail: waterzhj@ustc.edu.cn
  * 
@@ -12,7 +14,7 @@ package ustc.maomao.patterns.support;
  *         COS菜单项类型
  *      
  */
-public class MenuItem {
+public class MenuItem implements FoodItem{
 	
 	private int mType;//菜单项类型
 	private String mName;//菜单项名称
@@ -52,7 +54,13 @@ public class MenuItem {
 	 */
 	public void setmPrice(float mPrice) {
 		this.mPrice = mPrice;
-	}	
-	
+	}
+	/* (non-Javadoc)
+	 * @see ustc.maomao.patterns.decorator.FoodItem#order(int)
+	 */
+	@Override
+	public void order(int num) {		
+		System.out.println("您订购了 "+mName+" 菜品："+num+"份");
+	}		
 
 }

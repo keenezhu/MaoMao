@@ -1,5 +1,7 @@
 package ustc.maomao.patterns.decorator;
 
+import ustc.maomao.patterns.support.MenuItem;
+
 /**
  * @author Keene. Mail: waterzhj@ustc.edu.cn
  * 
@@ -14,10 +16,13 @@ package ustc.maomao.patterns.decorator;
  */
 public class Patron {
 	
+	/**
+	 * 订餐
+	 */
 	public void orderFood(){
 		
-		SimpleFood f1=new SimpleFood();
-		f1.setFoodName("辣子鸡");
+		MenuItem f1=new MenuItem();
+		f1.setmName("辣子鸡");
 		f1.order(1);
 		
 		SpicyFood f2=new SpicyFood(f1);		
