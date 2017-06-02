@@ -1,5 +1,8 @@
 package ustc.maomao.patterns.decorator;
 
+import ustc.maomao.patterns.support.FoodItem;
+import ustc.maomao.patterns.visitor.MealOrderVisitor;
+
 /**
  * @author Keene. Mail: waterzhj@ustc.edu.cn
  * 
@@ -38,6 +41,14 @@ public class SpicyFood extends FoodDecorator {
 	 */
 	public void setSpicyLevel(int level){
 		System.out.println("   辣味等级是："+level);
+	}
+
+	/* (non-Javadoc)
+	 * @see ustc.maomao.patterns.decorator.FoodItem#accept(ustc.maomao.patterns.visitor.MealOrderVisitor)
+	 */
+	@Override
+	public void accept(MealOrderVisitor visitor) {
+		visitor.visit(this);		
 	}
 
 }

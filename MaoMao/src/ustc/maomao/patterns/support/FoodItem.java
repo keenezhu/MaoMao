@@ -1,4 +1,6 @@
-package ustc.maomao.patterns.decorator;
+package ustc.maomao.patterns.support;
+
+import ustc.maomao.patterns.visitor.MealOrderVisitor;
 
 /**
  * @author Keene. Mail: waterzhj@ustc.edu.cn
@@ -20,4 +22,14 @@ public interface FoodItem {
      * @param num 菜品数量
      */
     public void order(int num);
+    /**
+     * 接收访问者
+     * @param visitor 访问者
+     */
+    public void accept(MealOrderVisitor visitor);
+    /**
+     * 获取菜品数量
+     * @return 菜品数量
+     */
+    public int getAmmount();
 }
