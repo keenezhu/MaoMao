@@ -1,5 +1,6 @@
 package ustc.maomao.patterns.decorator;
 
+import ustc.maomao.patterns.support.Patron;
 import ustc.maomao.patterns.support.PatternTester;
 
 /**

@@ -1,6 +1,7 @@
-package ustc.maomao.patterns.decorator;
+package ustc.maomao.patterns.support;
 
-import ustc.maomao.patterns.support.MenuItem;
+import ustc.maomao.patterns.decorator.SpicyFood;
+import ustc.maomao.patterns.decorator.SweetFood;
 
 /**
  * @author Keene. Mail: waterzhj@ustc.edu.cn
