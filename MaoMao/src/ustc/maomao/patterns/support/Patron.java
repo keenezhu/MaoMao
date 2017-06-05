@@ -21,6 +21,8 @@ import ustc.maomao.patterns.visitor.FoodTypeVisitor;
  */
 public class Patron {
 	
+	private PatronLevel level;//客户等级	
+
 	private MealOrder order;//菜品订单
 	
 	/**
@@ -82,6 +84,20 @@ public class Patron {
 	public void warningOrder(){
 		FoodLevelVisitor visitor=new FoodLevelVisitor();
 		order.accept(visitor);		
+	}
+	
+	/**
+	 * @return the level
+	 */
+	public PatronLevel getLevel() {
+		return level;
+	}
+
+	/**
+	 * @param level the level to set
+	 */
+	public void setLevel(PatronLevel level) {
+		this.level = level;
 	}
 
 }
