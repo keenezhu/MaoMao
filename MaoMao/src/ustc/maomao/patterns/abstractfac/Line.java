@@ -1,6 +1,7 @@
 
 package ustc.maomao.patterns.abstractfac;
 
+import ustc.maomao.patterns.composite.StatisView;
 
 /**
  * @author Keene. Mail: waterzhj@ustc.edu.cn
@@ -14,10 +15,6 @@ package ustc.maomao.patterns.abstractfac;
  *         线状图
  *      
  */
-public abstract class Line {
-     /**
-     * 绘制线状图
-     * 
-     */
-    public abstract void draw();
+public abstract class Line implements StatisView{
+    
 }

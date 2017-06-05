@@ -1,8 +1,10 @@
 package ustc.maomao.patterns.composite;
 
-import java.util.ArrayList;
-import java.util.List;
-
+import javafx.scene.chart.BarChart;
+import javafx.scene.chart.PieChart;
+import ustc.maomao.patterns.abstractfac.ChartFac;
+import ustc.maomao.patterns.abstractfac.CrystalChartFac;
+import ustc.maomao.patterns.support.Data;
 import ustc.maomao.patterns.support.PatternTester;
 
 /**
@@ -15,37 +17,40 @@ import ustc.maomao.patterns.support.PatternTester;
  *         designed by Keene, implemented by {Keene}
  * 
  *         组合模式测试器
- *      
+ * 
  */
 public class CompositeTester implements PatternTester {
 
-	/* (non-Javadoc)
+	/*
+	 * (non-Javadoc)
+	 * 
 	 * @see ustc.maomao.patterns.support.PatternTester#test()
 	 */
 	@Override
 	public void test() {
-		
-		//构造一个统计视图单页
-		ChartPage page1=new ChartPage();
-        PieChart page1Pie=new PieChart();
-        BarChart page1Bar=new BarChart();        
-        List<StatisView> page1Views=new ArrayList<StatisView>();
-        page1Views.add(page1Pie);
-        page1Views.add(page1Bar);        
-        page1.setViews(page1Views);
-        
-        //构造一个含单页的统计视图组合页
-        ChartPage pages=new ChartPage();
-        List<StatisView> views=new ArrayList<StatisView>();
-        BarChart pagesBar=new BarChart();
-        views.add(pagesBar);
-        views.add(page1);
-        pages.setViews(views);
-        
-        //使用ChartViewer显示统计视图页面
-        ChartViewer cv=new ChartViewer();
-        cv.display(pages);
-        
+
+		ChartFac chartFac = new CrystalChartFac();
+		Data chartData = new Data();
+
+		// 构造一个统计视图单页page1
+		ChartPage page1 = new ChartPage();
+		page1.addViews(chartFac.createBar(chartData));
+		page1.addViews(chartFac.createPie(chartData));
+
+		// 构造一个统计视图单页page2
+		ChartPage page2 = new ChartPage();
+		page2.addViews(chartFac.createBar(chartData));
+		page2.addViews(chartFac.createLine(chartData));
+
+		// 构造一个含单页的统计视图组合页
+		ChartPage multiPages = new ChartPage();
+		multiPages.addViews(page1);
+		multiPages.addViews(page2);
+
+		// 使用ChartViewer显示统计视图页面
+		ChartViewer cv = new ChartViewer();
+		cv.display(multiPages);
+
 	}
 
 }

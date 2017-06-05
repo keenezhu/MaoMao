@@ -15,7 +15,7 @@ package ustc.maomao.patterns.composite;
 public class ChartViewer {
 	
 	/**
-	 * 用于显示给定的统计视图，而不区分统计视图的类型是PieChart，BarChart还是ChartPage
+	 * 用于显示给定的统计视图，而不区分统计视图的类型是Pie，Bar，Line还是ChartPage
 	 * @param view 显示的统计视图
 	 */
 	public void display(StatisView view){

@@ -1,5 +1,6 @@
 package ustc.maomao.patterns.composite;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -16,24 +17,24 @@ import java.util.List;
  */
 public class ChartPage implements StatisView {
 	
-	private List<StatisView> views;
+	private List<StatisView> views=new ArrayList<StatisView>();
 
 	/* (non-Javadoc)
 	 * @see ustc.maomao.patterns.composite.StatisView#draw()
 	 */
 	@Override
 	public void draw() {
-		System.out.println("绘制统计图页面");
+		System.out.println("绘制统计页面");
 		for(StatisView v:views){
 			v.draw();
 		}
 	}
 
 	/**
-	 * @param views the views to set
+	 * @param view to add
 	 */
-	public void setViews(List<StatisView> views) {
-		this.views = views;
+	public void addViews(StatisView view) {
+		views.add(view);
 	}
 	
 }

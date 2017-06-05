@@ -2,8 +2,6 @@ package ustc.maomao.patterns.factorymethod;
 
 import java.io.FileOutputStream;
 
-import ustc.maomao.patterns.support.Data;
-
 /**
  * @author Keene. Mail: waterzhj@ustc.edu.cn
  * 

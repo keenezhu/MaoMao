@@ -1,7 +1,6 @@
 package ustc.maomao.patterns.decorator;
 
 import ustc.maomao.patterns.support.FoodItem;
-import ustc.maomao.patterns.visitor.MealOrderVisitor;
 
 /**
  * @author Keene. Mail: waterzhj@ustc.edu.cn
