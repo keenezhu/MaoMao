@@ -1,5 +1,7 @@
 package ustc.maomao.patterns.support;
 
+import ustc.maomao.patterns.proxy.MenuImage;
+
 /**
  * @author Keene. Mail: waterzhj@ustc.edu.cn
  * 
@@ -17,6 +19,13 @@ public class MenuItem {
 	private int mType;//菜单项类型
 	private String mName;//菜单项名称
 	private float mPrice;//菜单项价格
+	private MenuImage mImage;//菜单项图片
+	/**
+	 * @param mImage the mImage to set
+	 */
+	public void setmImage(MenuImage mImage) {
+		this.mImage = mImage;
+	}
 	/**
 	 * @return the mType
 	 */
@@ -53,6 +62,10 @@ public class MenuItem {
 	public void setmPrice(float mPrice) {
 		this.mPrice = mPrice;
 	}
-			
+	
+	public void display(){
+		System.out.println("菜品："+mName+"\n价格："+mPrice);
+		mImage.show();
+	}	
 
 }
