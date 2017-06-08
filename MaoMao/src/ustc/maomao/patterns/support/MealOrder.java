@@ -15,31 +15,59 @@ import ustc.maomao.patterns.visitor.MealOrderVisitor;
  *         designed by Keene, implemented by {Keene}
  * 
  *         菜品订单
- *      
+ * 
  */
 public class MealOrder {
-     List<FoodItem> foods;//菜品列表 
-     
-     public MealOrder(){
-    	 foods=new ArrayList<FoodItem>();
-     }
-     
-     /**
-      * 向订单中加入菜品
-     * @param food 菜品
-     */
-    public void addFood(FoodItem food){
-    	 foods.add(food);
-     }
-    
-     /**
-      * 访问订单菜品
-     * @param visitor
-     */
-    public void accept(MealOrderVisitor visitor){
-    	 for (FoodItem food:foods){
-    		 food.accept(visitor);
-    	 }
-     }
-     
+	private List<FoodItem> foods;// 菜品列表
+	private Patron customer;
+	private boolean paid;
+	
+
+	public MealOrder(Patron p) {
+		foods = new ArrayList<FoodItem>();
+		customer=p;
+	}
+
+	/**
+	 * 向订单中加入菜品
+	 * 
+	 * @param food
+	 *            菜品
+	 */
+	public void addFood(FoodItem food) {
+		foods.add(food);
+	}
+
+	/**
+	 * 访问订单菜品
+	 * 
+	 * @param visitor
+	 */
+	public void accept(MealOrderVisitor visitor) {
+		for (FoodItem food : foods) {
+			food.accept(visitor);
+		}
+	}
+
+	/**
+	 * @return the customer
+	 */
+	public Patron getCustomer() {
+		return customer;
+	}
+	
+	/**
+	 * @return the paid
+	 */
+	public boolean isPaid() {
+		return paid;
+	}
+
+	/**
+	 * @param paid the paid to set
+	 */
+	public void setPaid(boolean paid) {
+		this.paid = paid;
+	}
+
 }

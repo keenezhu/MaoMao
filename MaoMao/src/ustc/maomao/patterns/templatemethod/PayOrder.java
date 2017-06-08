@@ -24,9 +24,17 @@ public abstract class PayOrder {
 	 * @return 结帐结果
 	 */
 	public final boolean check(MealOrder o) {
-		confirm(o);
-		boolean result = pay(o);
-		getReceipt(o);
+		boolean result;
+		if (confirm(o)) {
+			if (pay(o)) {
+				getReceipt(o);
+				result = true;
+			} else {
+				result = false;
+			}
+		} else {
+			result = false;
+		}
 		return result;
 	}
 
@@ -45,8 +53,14 @@ public abstract class PayOrder {
 	 * @param o
 	 *            菜品订单
 	 */
-	private void confirm(MealOrder o) {
-		System.out.println("订单确认完成！");
+	private boolean confirm(MealOrder o) {
+		if (o.getCustomer().isLoginState()) {
+			System.out.println("订单确认完成！");
+			return true;
+		} else {
+			System.out.println("顾客未登录!");
+			return false;
+		}
 	}
 
 	/**
