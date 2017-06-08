@@ -52,7 +52,7 @@ public class CORTester implements PatternTester {
 		 */
         System.out.println("------客户p2下订单-------分割线");
         Patron p2=new Patron();        
-        p2.setLoginState(false);
+        p2.setLoginState(true);
         MealOrder p2Order=p2.orderFood();        
         orderController.validateOrder(p2Order);      
         
