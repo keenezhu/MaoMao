@@ -21,6 +21,19 @@ public abstract class FoodDecorator implements FoodItem {
 	public FoodDecorator(FoodItem fi) {
 		food = fi;
 	}
+	
+	
+
+	/* (non-Javadoc)
+	 * @see ustc.maomao.patterns.support.FoodItem#getName()
+	 */
+	@Override
+	public String getName() {
+		// TODO Auto-generated method stub
+		return food.getName();
+	}
+
+
 
 	/*
 	 * (non-Javadoc)
@@ -44,5 +57,6 @@ public abstract class FoodDecorator implements FoodItem {
 		// TODO Auto-generated method stub
 		return food.getAmmount();
 	}
+
 
 }

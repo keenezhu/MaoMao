@@ -13,23 +13,26 @@ import ustc.maomao.patterns.visitor.MealOrderVisitor;
  *         designed by Keene, implemented by {Keene}
  * 
  *         简单菜品
- *      
+ * 
  */
 public class SimpleFood implements FoodItem {
-	
-	private long id;//菜品对象id
-	private String name;//菜品名称
-	private int ammount;//菜品数量
+
+	private long id;// 菜品对象id
+	private String name;// 菜品名称
+
+	private int ammount;// 菜品数量
 
 	/**
-	 * @param name the name to set
+	 * @param name
+	 *            the name to set
 	 */
 	public void setName(String name) {
 		this.name = name;
-	}	
+	}
 
-	
-	/* (non-Javadoc)
+	/*
+	 * (non-Javadoc)
+	 * 
 	 * @see ustc.maomao.patterns.decorator.FoodItem#getAmmount()
 	 */
 	@Override
@@ -38,21 +41,35 @@ public class SimpleFood implements FoodItem {
 		return ammount;
 	}
 
-	/* (non-Javadoc)
+	/*
+	 * (non-Javadoc)
+	 * 
 	 * @see ustc.maomao.patterns.decorator.FoodItem#order(int)
 	 */
 	@Override
 	public void order(int num) {
-		ammount=num;
-		System.out.println("您订购了 "+name+" 菜品："+num+"份");
+		ammount = num;
+		System.out.println("您订购了 " + name + " 菜品：" + num + "份");
 	}
 
-	/* (non-Javadoc)
-	 * @see ustc.maomao.patterns.decorator.FoodItem#accept(ustc.maomao.patterns.visitor.MealOrderVisitor)
+	/*
+	 * (non-Javadoc)
+	 * 
+	 * @see ustc.maomao.patterns.decorator.FoodItem#accept(ustc.maomao.patterns.
+	 * visitor.MealOrderVisitor)
 	 */
 	@Override
 	public void accept(MealOrderVisitor visitor) {
-		visitor.visit(this);		
-	}	
+		visitor.visit(this);
+	}
+
+	/* (non-Javadoc)
+	 * @see ustc.maomao.patterns.support.FoodItem#getName()
+	 */
+	@Override
+	public String getName() {
+		// TODO Auto-generated method stub
+		return name;
+	}
 
 }

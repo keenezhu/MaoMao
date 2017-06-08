@@ -31,5 +31,12 @@ public interface FoodItem {
      * 获取菜品数量
      * @return 菜品数量
      */
-    public int getAmmount();
+    public int getAmmount();   
+    
+    /**
+     * 获取菜品名称
+     * @return 菜品名称
+     */
+    public String getName();
+    
 }
