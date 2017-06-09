@@ -24,10 +24,10 @@ public class Patron {
 	private PatronLevel level;// 客户等级
 
 	private MealOrder order;// 菜品订单
-	
-	private boolean loginState;//当前客户登录状态
 
-	
+	private boolean loginState;// 当前客户登录状态
+
+	private String name;// 客户名称
 
 	/**
 	 * 订餐
@@ -73,7 +73,7 @@ public class Patron {
 	public void pay(PayOrder po) {
 		if (po.check(order)) {
 			System.out.println("支付成功！");
-			order.setPaid(true);			
+			order.setPaid(true);
 		} else {
 			System.out.println("支付不成功！");
 			order.setPaid(false);
@@ -111,7 +111,7 @@ public class Patron {
 	public void setLevel(PatronLevel level) {
 		this.level = level;
 	}
-	
+
 	/**
 	 * @return the loginState
 	 */
@@ -120,10 +120,26 @@ public class Patron {
 	}
 
 	/**
-	 * @param loginState the loginState to set
+	 * @param loginState
+	 *            the loginState to set
 	 */
 	public void setLoginState(boolean loginState) {
 		this.loginState = loginState;
+	}
+
+	/**
+	 * @return the name
+	 */
+	public String getName() {
+		return name;
+	}
+
+	/**
+	 * @param name
+	 *            the name to set
+	 */
+	public void setName(String name) {
+		this.name = name;
 	}
 
 }
