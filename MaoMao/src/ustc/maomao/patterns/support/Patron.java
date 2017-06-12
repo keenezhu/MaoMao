@@ -3,6 +3,8 @@ package ustc.maomao.patterns.support;
 import ustc.maomao.patterns.decorator.SimpleFood;
 import ustc.maomao.patterns.decorator.SpicyFood;
 import ustc.maomao.patterns.decorator.SweetFood;
+import ustc.maomao.patterns.mediator.Colleague;
+import ustc.maomao.patterns.mediator.ColleagueMediator;
 import ustc.maomao.patterns.templatemethod.PayOrder;
 import ustc.maomao.patterns.visitor.FoodLevelVisitor;
 import ustc.maomao.patterns.visitor.FoodTypeVisitor;
@@ -19,7 +21,7 @@ import ustc.maomao.patterns.visitor.FoodTypeVisitor;
  *         订餐客户
  * 
  */
-public class Patron {
+public class Patron implements Colleague {
 
 	private PatronLevel level;// 客户等级
 
@@ -28,6 +30,23 @@ public class Patron {
 	private boolean loginState;// 当前客户登录状态
 
 	private String name;// 客户名称
+
+	private ColleagueMediator mediator;//仲裁者
+
+	/**
+	 * 接收消息
+	 * @param message 消息
+	 */
+	public void receiveMessage(String message) {
+		System.out.println("Patron收到消息："+message);
+	}
+
+	/**
+	 * 请求配送订单
+	 */
+	public void requestDelivery() {
+		mediator.mediate(this);
+	}
 
 	/**
 	 * 订餐
@@ -140,6 +159,21 @@ public class Patron {
 	 */
 	public void setName(String name) {
 		this.name = name;
+	}
+
+	/**
+	 * @return the order
+	 */
+	public MealOrder getOrder() {
+		return order;
+	}
+
+	/**
+	 * @param mediator
+	 *            the mediator to set
+	 */
+	public void setMediator(ColleagueMediator mediator) {
+		this.mediator = mediator;
 	}
 
 }
