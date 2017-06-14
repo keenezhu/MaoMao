@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import ustc.maomao.patterns.memento.IMemento;
+import ustc.maomao.patterns.state.OrderState;
 import ustc.maomao.patterns.visitor.MealOrderVisitor;
 
 /**
@@ -22,11 +23,18 @@ public class MealOrder {
 	private List<FoodItem> foods;// 菜品列表
 	private Patron customer;// 客户
 	private boolean paid;// 是否支付
-	private OrderState state = new OrderState();// 订单状态
+	private OrderState state;// 订单状态
 
 	public MealOrder(Patron p) {
 		foods = new ArrayList<FoodItem>();
 		customer = p;
+	}
+
+	/**
+	 * 依据状态而变化的订单行为
+	 */
+	public void go() {
+		state.handle();
 	}
 
 	/**
@@ -82,26 +90,6 @@ public class MealOrder {
 	}
 
 	/**
-	 * 
-	 * 订单状态类
-	 *
-	 */
-	private class OrderState implements Cloneable {
-
-		/*
-		 * (non-Javadoc)
-		 * 
-		 * @see java.lang.Object#clone()
-		 */
-		@Override
-		public Object clone() throws CloneNotSupportedException {
-			// TODO Auto-generated method stub
-			return super.clone();
-		}
-
-	}
-
-	/**
 	 * 向订单中加入菜品
 	 * 
 	 * @param food
@@ -142,6 +130,14 @@ public class MealOrder {
 	 */
 	public void setPaid(boolean paid) {
 		this.paid = paid;
+	}
+
+	/**
+	 * @param state
+	 *            the state to set
+	 */
+	public void setState(OrderState state) {
+		this.state = state;
 	}
 
 }

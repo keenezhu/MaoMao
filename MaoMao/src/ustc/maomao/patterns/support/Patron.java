@@ -6,6 +6,8 @@ import ustc.maomao.patterns.decorator.SweetFood;
 import ustc.maomao.patterns.mediator.Colleague;
 import ustc.maomao.patterns.mediator.ColleagueMediator;
 import ustc.maomao.patterns.memento.CareTaker;
+import ustc.maomao.patterns.state.OrderState;
+import ustc.maomao.patterns.state.PlacedState;
 import ustc.maomao.patterns.templatemethod.PayOrder;
 import ustc.maomao.patterns.visitor.FoodLevelVisitor;
 import ustc.maomao.patterns.visitor.FoodTypeVisitor;
@@ -56,14 +58,15 @@ public class Patron implements Colleague {
 	/**
 	 * 备忘订单状态
 	 */
-	public void storeOrderSate() {
+	public void storeOrderSate(OrderState state) {
 
 		if (caretaker == null) {
 			caretaker = new CareTaker();
 		}
 		if (order == null) {
-			order = orderFood();
+			order = orderFood();			
 		}
+		order.setState(state);
 		System.out.println("------备忘订单状态------");
 		caretaker.addMemento(order.createMemento());
 		System.out.println("------备忘完成------");

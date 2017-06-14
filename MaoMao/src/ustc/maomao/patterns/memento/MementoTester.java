@@ -1,5 +1,7 @@
 package ustc.maomao.patterns.memento;
 
+import ustc.maomao.patterns.state.FinishedState;
+import ustc.maomao.patterns.state.PlacedState;
 import ustc.maomao.patterns.support.Patron;
 import ustc.maomao.patterns.support.PatternTester;
 
@@ -24,12 +26,17 @@ public class MementoTester implements PatternTester {
 	public void test() {
 		Patron p=new Patron();
 		//两次备忘
-        p.storeOrderSate();
-        p.storeOrderSate();
+        p.storeOrderSate(new PlacedState(p.getOrder()));
+        p.getOrder().go();
+        p.storeOrderSate(new FinishedState(p.getOrder()));
+        p.getOrder().go();
         //三次恢复
         p.restoreOrderState();
+        p.getOrder().go();
         p.restoreOrderState();
+        p.getOrder().go();
         p.restoreOrderState();
+        p.getOrder().go();
         
 	}
 
