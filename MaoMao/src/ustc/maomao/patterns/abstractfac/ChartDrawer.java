@@ -14,10 +14,10 @@ import ustc.maomao.patterns.support.Data;
  *         统计图表绘制器，是使用图表元素创建工厂的客户端
  *      
  */
-public class CDrawer {
+public class ChartDrawer {
 	
 	private ChartFac  chartFac;
-	public CDrawer(ChartFac fac){
+	public ChartDrawer(ChartFac fac){
 		chartFac=fac;
 	}
 	/**

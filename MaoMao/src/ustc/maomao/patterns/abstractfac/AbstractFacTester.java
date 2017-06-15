@@ -27,7 +27,7 @@ public class AbstractFacTester implements PatternTester {
 				ChartFac fac = new FlatChartFac();
 				
 				// 构造图表绘制对象
-				CDrawer drawer = new CDrawer(fac);
+				ChartDrawer drawer = new ChartDrawer(fac);
 				
 				// 根据数据源绘制柱状图
 				Data barData = new Data();
