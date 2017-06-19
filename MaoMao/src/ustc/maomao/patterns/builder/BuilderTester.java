@@ -36,7 +36,8 @@ public class BuilderTester implements PatternTester {
 		
 		BuilderDirector director=new BuilderDirector();
 		JSONBuilder builder=new JSONBuilder();
-		director.construct(builder, dataSource);		
+		director.setBuilder(builder);
+		director.construct( dataSource);		
 		System.out.println(builder.getJsonText());		
 	}
 

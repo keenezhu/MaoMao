@@ -21,7 +21,7 @@ public class MData {
 	/**
 	 * @return List<MenuItem>类型菜单数据
 	 */
-	public List<MenuItem> getData() {
+	public List<MenuItem> getMenuItems() {
 		List<MenuItem> data = new ArrayList<MenuItem>();
 		for (int i = 0; i < 10; i++) {
 			MenuItem item = new MenuItem();

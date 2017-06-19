@@ -13,28 +13,39 @@ import java.util.List;
  *         designed by Keene, implemented by {Keene}
  * 
  *         统计图页面
- *      
+ * 
  */
 public class ChartPage implements StatisView {
-	
-	private List<StatisView> views=new ArrayList<StatisView>();
 
-	/* (non-Javadoc)
+	private List<StatisView> views = new ArrayList<StatisView>();
+
+	/*
+	 * (non-Javadoc)
+	 * 
 	 * @see ustc.maomao.patterns.composite.StatisView#draw()
 	 */
 	@Override
 	public void draw() {
 		System.out.println("绘制统计页面");
-		for(StatisView v:views){
+		for (StatisView v : views) {
 			v.draw();
 		}
 	}
 
 	/**
-	 * @param view to add
+	 * @param view
+	 *            to add
 	 */
-	public void addViews(StatisView view) {
+	public void addView(StatisView view) {
 		views.add(view);
 	}
-	
+
+	/**
+	 * @param view
+	 *            to remove
+	 */
+	public void removeView(StatisView view) {
+		views.remove(view);
+	}
+
 }

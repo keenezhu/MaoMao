@@ -17,12 +17,14 @@ import ustc.maomao.patterns.support.MenuItem;
  * 
  */
 public class BuilderDirector {
+	
+	private TextBuilder builder;//构造器
 
 	/**
 	 * @param builder 构造器
 	 * @param data 数据源
 	 */
-	public void construct(TextBuilder builder, List<MenuItem> data) {
+	public void construct(List<MenuItem> data) {
 		
 		for (MenuItem mi : data) {
              builder.convertmType(mi.getmType());
@@ -30,5 +32,13 @@ public class BuilderDirector {
              builder.convertmPrice(mi.getmPrice());
 		}
 	}
+	
+	/**
+	 * @param builder the builder to set
+	 */
+	public void setBuilder(TextBuilder builder) {
+		this.builder = builder;
+	}
+
 
 }

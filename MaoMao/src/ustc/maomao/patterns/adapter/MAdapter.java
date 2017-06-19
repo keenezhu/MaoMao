@@ -25,7 +25,7 @@ public class MAdapter implements MList {
 	 */
 	@Override
 	public List<HashMap<String, String>> getData() {
-		List<MenuItem> dataSource=new MData().getData();
+		List<MenuItem> dataSource=new MData().getMenuItems();
 		List<HashMap<String,String>> data=new ArrayList<HashMap<String,String>>();
 		for(MenuItem item:dataSource){
 			HashMap<String,String> element=new HashMap<String,String>();

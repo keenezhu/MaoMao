@@ -34,18 +34,18 @@ public class CompositeTester implements PatternTester {
 
 		// 构造一个统计视图单页page1
 		ChartPage page1 = new ChartPage();
-		page1.addViews(chartFac.createBar(chartData));
-		page1.addViews(chartFac.createPie(chartData));
+		page1.addView(chartFac.createBar(chartData));
+		page1.addView(chartFac.createPie(chartData));
 
 		// 构造一个统计视图单页page2
 		ChartPage page2 = new ChartPage();
-		page2.addViews(chartFac.createBar(chartData));
-		page2.addViews(chartFac.createLine(chartData));
+		page2.addView(chartFac.createBar(chartData));
+		page2.addView(chartFac.createLine(chartData));
 
 		// 构造一个含单页的统计视图组合页
 		ChartPage multiPages = new ChartPage();
-		multiPages.addViews(page1);
-		multiPages.addViews(page2);
+		multiPages.addView(page1);
+		multiPages.addView(page2);
 
 		// 使用ChartViewer显示统计视图页面
 		ChartViewer cv = new ChartViewer();
