@@ -13,5 +13,11 @@ package ustc.maomao.patterns.mediator;
  *      
  */
 public interface Colleague {
+	
+	/**
+	 * 设置仲裁者
+	 * @param media 仲裁者
+	 */
+	public void setMediator(ColleagueMediator media);
        
 }

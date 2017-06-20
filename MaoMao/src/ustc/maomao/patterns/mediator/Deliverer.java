@@ -15,24 +15,31 @@ import ustc.maomao.patterns.support.MealOrder;
  * 
  */
 public class Deliverer implements Colleague {
-	
-	private ColleagueMediator mediator;//仲裁者
+
+	private ColleagueMediator mediator;// 仲裁者
 
 	/**
-	 * @param mediator
-	 *            the mediator to set
-	 */
-	public void setMediator(ColleagueMediator mediator) {
-		this.mediator = mediator;
-	}
-	
-	/**
 	 * 配送订单
-	 * @param o 订单
+	 * 
+	 * @param o
+	 *            订单
 	 */
-	public void deliver(MealOrder o){
-		 System.out.println("订单正在配送!");
-	    mediator.mediate(this);
+	public void deliver(MealOrder o) {
+		System.out.println("订单正在配送!");
+		mediator.mediate(this);
+	}
+
+	/*
+	 * (non-Javadoc)
+	 * 
+	 * @see
+	 * ustc.maomao.patterns.mediator.Colleague#setMediator(ustc.maomao.patterns.
+	 * mediator.ColleagueMediator)
+	 */
+	@Override
+	public void setMediator(ColleagueMediator media) {
+		// TODO Auto-generated method stub
+		mediator = media;
 	}
 
 }

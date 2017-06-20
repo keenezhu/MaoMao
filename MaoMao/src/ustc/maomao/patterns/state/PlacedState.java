@@ -19,6 +19,7 @@ public class PlacedState implements OrderState {
 
 	public PlacedState(MealOrder con) {
 		context = con;
+		System.out.println("订单是Placed状态！");
 	}
 
 	/*

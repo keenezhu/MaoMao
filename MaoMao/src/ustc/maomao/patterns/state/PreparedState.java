@@ -20,6 +20,7 @@ public class PreparedState implements OrderState {
 
 	public PreparedState(MealOrder con) {
 		context = con;
+		System.out.println("订单是Prepared状态！");
 	}
 
 	/* (non-Javadoc)

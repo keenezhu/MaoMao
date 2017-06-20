@@ -34,7 +34,7 @@ public class Patron implements Colleague {
 
 	private String name;// 客户名称
 
-	private CareTaker caretaker;// 订单备忘录守护者
+
 
 	private ColleagueMediator mediator;// 仲裁者
 
@@ -55,36 +55,7 @@ public class Patron implements Colleague {
 		mediator.mediate(this);
 	}
 
-	/**
-	 * 备忘订单状态
-	 */
-	public void storeOrderSate() {
 
-		if (caretaker == null) {
-			caretaker = new CareTaker();
-		}
-		if (order == null) {
-			order = orderFood();
-			order.setState(new PlacedState(order));
-		}
-		System.out.println("------备忘订单状态------");
-		caretaker.addMemento(order.createMemento());
-		System.out.println("------备忘完成------");
-	}
-
-	/**
-	 * 恢复订单状态
-	 */
-	public void restoreOrderState() {
-		if (caretaker == null) {
-			System.out.println("没有备忘过订单状态!");
-		} else {
-			System.out.println("*********恢复订单状态*********");
-			order.restoreState(caretaker.getMemento());
-			System.out.println("*********恢复完成*********");
-		}
-
-	}
 
 	/**
 	 * 订餐
@@ -206,12 +177,15 @@ public class Patron implements Colleague {
 		return order;
 	}
 
-	/**
-	 * @param mediator
-	 *            the mediator to set
+	/* (non-Javadoc)
+	 * @see ustc.maomao.patterns.mediator.Colleague#setMediator(ustc.maomao.patterns.mediator.ColleagueMediator)
 	 */
-	public void setMediator(ColleagueMediator mediator) {
-		this.mediator = mediator;
+	@Override
+	public void setMediator(ColleagueMediator media) {
+		// TODO Auto-generated method stub
+		mediator=media;
 	}
+
+	
 
 }

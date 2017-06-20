@@ -1,7 +1,8 @@
 package ustc.maomao.patterns.memento;
 
-import ustc.maomao.patterns.state.FinishedState;
+import ustc.maomao.patterns.mediator.Staff;
 import ustc.maomao.patterns.state.PlacedState;
+import ustc.maomao.patterns.state.PreparedState;
 import ustc.maomao.patterns.support.MealOrder;
 import ustc.maomao.patterns.support.Patron;
 import ustc.maomao.patterns.support.PatternTester;
@@ -27,26 +28,19 @@ public class MementoTester implements PatternTester {
 	 */
 	@Override
 	public void test() {
+		//生成订单
 		Patron p = new Patron();
 		MealOrder o = p.orderFood();
-
-		// 两次备忘
-		o.setState(new PlacedState(o));
-		o.go();
-		p.storeOrderSate();
-
-		o.setState(new FinishedState(o));
-		o.go();
-		p.storeOrderSate();
-
-		// 三次恢复
-		p.restoreOrderState();
-		o.go();
-		p.restoreOrderState();
-		o.go();
-		p.restoreOrderState();
-		o.go();
-
+        o.setState(new PlacedState(o));
+       
+		Staff staff=new Staff();
+		staff.setOrder(o);
+		//备份订单状态
+		staff.storeOrderSate();
+		 //更改订单状态
+		staff.changeOrderState(new PreparedState(o));
+		 //恢复订单状态
+        staff.restoreOrderState();
 	}
 
 }

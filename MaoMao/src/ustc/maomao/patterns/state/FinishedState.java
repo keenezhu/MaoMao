@@ -20,6 +20,7 @@ public class FinishedState implements OrderState {
 
 	public FinishedState(MealOrder con) {
 		context = con;
+		System.out.println("订单是Finished状态！");
 	}
 
 	/*

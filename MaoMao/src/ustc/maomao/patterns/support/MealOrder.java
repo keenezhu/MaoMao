@@ -62,8 +62,8 @@ public class MealOrder {
 	 */
 	public void restoreState(IMemento memento) {
 		OrderMemento mem = (OrderMemento) memento;
-		state = mem.getState();
-		System.out.println("状态已恢复!");
+		state = mem.getState();		
+		System.out.println(state.toString()+"状态已恢复!");
 	}
 
 	/**

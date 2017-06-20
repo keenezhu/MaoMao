@@ -2,6 +2,8 @@ package ustc.maomao.patterns.mediator;
 
 import ustc.maomao.patterns.iterator.OrderIterator;
 import ustc.maomao.patterns.iterator.PendingOrders;
+import ustc.maomao.patterns.memento.CareTaker;
+import ustc.maomao.patterns.state.OrderState;
 import ustc.maomao.patterns.state.PlacedState;
 import ustc.maomao.patterns.support.MealOrder;
 
@@ -20,13 +22,28 @@ import ustc.maomao.patterns.support.MealOrder;
 public class Staff implements Colleague {
 
 	private ColleagueMediator mediator;// 仲裁者
+	private CareTaker caretaker;// 订单备忘录守护者
+	private MealOrder order;// 菜品订单
 
 	/**
-	 * @param mediator
-	 *            the mediator to set
+	 * @param order
+	 *            the order to set
 	 */
-	public void setMediator(ColleagueMediator mediator) {
-		this.mediator = mediator;
+	public void setOrder(MealOrder order) {
+		this.order = order;
+	}
+
+	/*
+	 * (non-Javadoc)
+	 * 
+	 * @see
+	 * ustc.maomao.patterns.mediator.Colleague#setMediator(ustc.maomao.patterns.
+	 * mediator.ColleagueMediator)
+	 */
+	@Override
+	public void setMediator(ColleagueMediator media) {
+		// TODO Auto-generated method stub
+		mediator = media;
 	}
 
 	/**
@@ -86,4 +103,44 @@ public class Staff implements Colleague {
 			}
 		}
 	}
+
+	/**
+	 * 备忘订单状态
+	 */
+	public void storeOrderSate() {
+
+		if (caretaker == null) {
+			caretaker = new CareTaker();
+		}
+
+		System.out.println("------备忘订单状态------");
+		caretaker.addMemento(order.createMemento());
+		System.out.println("------备忘完成------");
+
+	}
+
+	/**
+	 * 恢复订单状态
+	 */
+	public void restoreOrderState() {
+		if (caretaker == null) {
+			System.out.println("没有备忘过订单状态!");
+		} else {
+			System.out.println("*********恢复订单状态*********");
+			order.restoreState(caretaker.getMemento());
+			System.out.println("*********恢复完成*********");
+		}
+
+	}
+
+	/**
+	 * 更改订单状态
+	 * @param state 状态
+	 */
+	public void changeOrderState(OrderState state) {
+		if (order != null) {
+			order.setState(state);
+		}
+	}
+
 }
