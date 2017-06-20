@@ -16,7 +16,7 @@ import java.util.Random;
  */
 public class MenuImageProxy implements MenuImage {
 	
-	private MenuImage subject;//目标菜单项图片
+	private RealMenuImage subject;//目标菜单项图片
 	
 	
 	/* (non-Javadoc)
