@@ -1,5 +1,6 @@
 package ustc.maomao.patterns.iterator;
 
+import ustc.maomao.patterns.mediator.Staff;
 import ustc.maomao.patterns.support.MealOrder;
 import ustc.maomao.patterns.support.Patron;
 import ustc.maomao.patterns.support.PatternTester;
@@ -34,17 +35,9 @@ public class IteratorTester implements PatternTester {
 			MealOrder o = new MealOrder(p);
 			po.add(o);
 		}
-       //测试迭代器
-		OrderIterator iterator = po.iterate();
-		MealOrder order = iterator.first();
-		if (order != null) {
-			System.out.println(order.getCustomer().getName());
-			while (iterator.hasNext()) {
-				order = iterator.down();	
-				//po.add(order);
-			    System.out.println(order.getCustomer().getName());				
-			}
-		}
+       
+		Staff staff=new Staff();
+		staff.checkPendingOrders(po);
 
 	}
 

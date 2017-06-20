@@ -1,5 +1,8 @@
 package ustc.maomao.patterns.mediator;
 
+import ustc.maomao.patterns.iterator.OrderIterator;
+import ustc.maomao.patterns.iterator.PendingOrders;
+import ustc.maomao.patterns.state.PlacedState;
 import ustc.maomao.patterns.support.MealOrder;
 
 /**
@@ -16,7 +19,7 @@ import ustc.maomao.patterns.support.MealOrder;
  */
 public class Staff implements Colleague {
 
-	private ColleagueMediator mediator;//仲裁者
+	private ColleagueMediator mediator;// 仲裁者
 
 	/**
 	 * @param mediator
@@ -28,7 +31,9 @@ public class Staff implements Colleague {
 
 	/**
 	 * 请求配送订单
-	 * @param o 订单
+	 * 
+	 * @param o
+	 *            订单
 	 * @return 配送结果
 	 */
 	public boolean requestDelivery(MealOrder o) {
@@ -42,7 +47,9 @@ public class Staff implements Colleague {
 
 	/**
 	 * 验证订单
-	 * @param o 订单
+	 * 
+	 * @param o
+	 *            订单
 	 * @return 验证结果
 	 */
 	private boolean verifyOrder(MealOrder o) {
@@ -52,9 +59,31 @@ public class Staff implements Colleague {
 
 	/**
 	 * 接收消息
-	 * @param message 消息
+	 * 
+	 * @param message
+	 *            消息
 	 */
 	public void receiveMessage(String message) {
 		System.out.println("Staff收到消息：" + message);
+	}
+
+	/**
+	 * 审核订单
+	 * 
+	 * @param orders
+	 *            订单
+	 */
+	public void checkPendingOrders(PendingOrders orders) {
+		OrderIterator iterator = orders.iterate();
+		MealOrder order = iterator.first();
+		if (order != null) {
+			order.setState(new PlacedState(order));
+			System.out.println(order.getCustomer().getName() + "订单已审核！");
+			while (iterator.hasNext()) {
+				order = iterator.down();
+				order.setState(new PlacedState(order));
+				System.out.println(order.getCustomer().getName() + "订单已审核！");
+			}
+		}
 	}
 }
