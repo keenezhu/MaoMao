@@ -9,7 +9,7 @@ package ustc.maomao.patterns.singleton;
  * 
  *         designed by Keene, implemented by {Keene}
  * 
- *         Configuration是COS系统的配置类，根据项目的xml配置文件进行初始化对象
+ *         Configuration是COS系统的配置类，根据项目的xml或json配置文件进行初始化对象
  *         Configuration向所有的客户对象提供共享单例，保证项目配置的共享和一致
  *      
  */
