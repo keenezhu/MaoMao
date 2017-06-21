@@ -1,6 +1,8 @@
 package ustc.maomao.patterns.cor;
 
 import ustc.maomao.patterns.support.MealOrder;
+import ustc.maomao.patterns.visitor.FoodLevelVisitor;
+import ustc.maomao.patterns.visitor.FoodTypeVisitor;
 
 /**
  * @author Keene. Mail: waterzhj@ustc.edu.cn
@@ -36,4 +38,22 @@ public class MealOrderController {
 	public void setValidator(OrderValidator validator) {
 		this.validator = validator;
 	}
+	
+	/**
+	 * 显示订单菜品统计信息
+	 */
+	public void dispayOrderStatis(MealOrder order) {
+		FoodTypeVisitor visitor = new FoodTypeVisitor();
+		order.accept(visitor);
+		visitor.displayResult();
+	}
+
+	/**
+	 * 检查订单并提醒客户关于菜品的信息
+	 */
+	public void warningOrder(MealOrder order) {
+		FoodLevelVisitor visitor = new FoodLevelVisitor();
+		order.accept(visitor);
+	}	
+	
 }

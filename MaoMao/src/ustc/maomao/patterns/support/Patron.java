@@ -109,23 +109,6 @@ public class Patron implements Colleague {
 	}
 
 	/**
-	 * 查看订单菜品统计信息
-	 */
-	public void viewOrderStatis() {
-		FoodTypeVisitor visitor = new FoodTypeVisitor();
-		order.accept(visitor);
-		visitor.displayResult();
-	}
-
-	/**
-	 * 检查订单并提醒客户关于菜品的信息
-	 */
-	public void warningOrder() {
-		FoodLevelVisitor visitor = new FoodLevelVisitor();
-		order.accept(visitor);
-	}
-
-	/**
 	 * @return the level
 	 */
 	public PatronLevel getLevel() {

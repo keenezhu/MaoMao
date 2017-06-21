@@ -1,5 +1,7 @@
 package ustc.maomao.patterns.visitor;
 
+import ustc.maomao.patterns.cor.MealOrderController;
+import ustc.maomao.patterns.support.MealOrder;
 import ustc.maomao.patterns.support.Patron;
 import ustc.maomao.patterns.support.PatternTester;
 
@@ -24,9 +26,10 @@ public class VisitorTester implements PatternTester{
 	public void test() {
 		// TODO Auto-generated method stub
 		Patron p=new Patron();
-		p.orderFood();
-		p.viewOrderStatis();
-	    p.warningOrder();
+		MealOrder order=p.orderFood();
+		MealOrderController controller=new MealOrderController();
+		controller.dispayOrderStatis(order);
+		controller.warningOrder(order);
 	}
 
 }
