@@ -28,8 +28,10 @@ public class VisitorTester implements PatternTester{
 		Patron p=new Patron();
 		MealOrder order=p.orderFood();
 		MealOrderController controller=new MealOrderController();
-		controller.dispayOrderStatis(order);
-		controller.warningOrder(order);
+		MealOrderVisitor typeVisitor=new FoodTypeVisitor();
+		controller.dispayOrderStatis(order,typeVisitor);
+		MealOrderVisitor levelVisitor=new FoodLevelVisitor();
+		controller.warningOrder(order,levelVisitor);
 	}
 
 }
