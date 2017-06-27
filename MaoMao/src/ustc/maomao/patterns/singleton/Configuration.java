@@ -25,7 +25,7 @@ public class Configuration {
 	 */
 	private static Configuration createInstance(){
 		Configuration c=new Configuration();
-		//initialize c instance from xml
+		//initialize c instance from xml or json
 		//other operations
 		return c;
 	}
