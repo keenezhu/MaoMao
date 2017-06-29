@@ -20,16 +20,15 @@ public class Notification implements Cloneable{
         private String content;
         private NotificationFooter footer;
         
-        public Notification(){
-        	footer=new NotificationFooter();
-        	//initialize footer
+        Notification(NotificationFooter foo){
+        	footer=foo;        	
         }
         
 		/* 克隆Notification对象（浅拷贝--shallow copy，共享footer）
 		 * @see java.lang.Object#clone()
 		 */
 		@Override
-		protected Notification clone()  {
+		public Notification clone()  {
 			// TODO Auto-generated method stub
 			try {
 				return (Notification)super.clone();
@@ -63,12 +62,5 @@ public class Notification implements Cloneable{
 		public void setContent(String content) {
 			this.content = content;
 		}
-		/**
-		 * @return the footer
-		 */		
-		public NotificationFooter getFooter() {
-			
-			return footer;
-		}
-		        
+		
 }

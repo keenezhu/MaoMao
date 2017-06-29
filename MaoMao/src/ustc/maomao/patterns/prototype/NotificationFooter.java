@@ -21,6 +21,20 @@ public class NotificationFooter {
        private Image cosLogo;
        private String cosAddr;
        private String cosTel;
+       private Image background;
+       
+	/**
+	 * @return the background
+	 */
+	public Image getBackground() {
+		return background;
+	}
+	/**
+	 * @param background the background to set
+	 */
+	public void setBackground(Image background) {
+		this.background = background;
+	}
 	/**
 	 * @return the cosLogo
 	 */

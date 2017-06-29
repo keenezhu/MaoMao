@@ -24,12 +24,13 @@ public class Configuration {
 	 * @return c 已根据COS的xml配置文件进行初始化后的对象
 	 */
 	private static Configuration createInstance(){
-		Configuration c=new Configuration();
+		Configuration c=new Configuration();		
 		//initialize c instance from xml or json
 		//other operations
 		return c;
 	}
 	
+
 	
 	/**
 	 * @return cosConfig 共享给所有的客户对象//cosConfig是静态域，将在Configuration类首次加载时初始化
