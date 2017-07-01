@@ -31,5 +31,11 @@ public class TerminalExpression implements ValueExpression {
 	public int interpret(ValueContext con) {		
 		return con.getValue(symbol);
 	}
+	
+	@Override
+	public String toString() {
+		// TODO Auto-generated method stub
+		return symbol;
+	}
 
 }

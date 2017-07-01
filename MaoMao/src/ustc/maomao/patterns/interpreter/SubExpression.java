@@ -31,5 +31,11 @@ public class SubExpression extends NonterminalExpression {
 		// TODO Auto-generated method stub
 		return left.interpret(con)-right.interpret(con);
 	}
+	
+	@Override
+	public String toString() {
+		// TODO Auto-generated method stub
+		return left.toString()+"-"+right.toString();
+	}
 
 }

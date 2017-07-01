@@ -1,5 +1,7 @@
 package ustc.maomao.patterns.interpreter;
 
+import java.util.Random;
+
 import ustc.maomao.patterns.support.PatternTester;
 
 /**
@@ -23,21 +25,12 @@ public class InterpreterTester implements PatternTester {
 	 */
 	@Override
 	public void test() {
-
-		ValueContext con = new ValueContext();//构造值上下文
-
-		ValueExpression exp = constructExp();//获取已构造的表达式
-
-		System.out.println(exp.interpret(con));
-	}
-
-	/**
-	 * 构造表达式
-	 * @return 表达式
-	 */
-	public ValueExpression constructExp() {		
-		return new AddExpression(new AddExpression(new TerminalExpression("玖"), new TerminalExpression("肆")),
-				new TerminalExpression("伍"));
+		LoginCodeVerifier verifier = new LoginCodeVerifier();
+		Random r=new Random();
+		while(!verifier.verify(r.nextInt(10))){
+			verifier.updateExp();			
+		}
+		System.out.println("验证码正确！");
 	}
 
 }

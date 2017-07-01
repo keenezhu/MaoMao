@@ -1,6 +1,7 @@
 package ustc.maomao.patterns.interpreter;
 
 import java.util.HashMap;
+import java.util.Set;
 
 /**
  * @author Keene. Mail: waterzhj@ustc.edu.cn
@@ -15,9 +16,19 @@ import java.util.HashMap;
  * 
  */
 public class ValueContext {
+
 	private HashMap<String, Integer> symbolTable = new HashMap<String, Integer>();// 符号表
+	private String[] symbols = new String[10];// 符号数组
 
 	public ValueContext() {
+		initSymbolTable();
+		symbolTable.keySet().toArray(symbols);
+	}
+
+	/**
+	 * 初始化符号表
+	 */
+	private void initSymbolTable() {
 		symbolTable.put("零", 0);
 		symbolTable.put("壹", 1);
 		symbolTable.put("贰", 2);
@@ -45,4 +56,19 @@ public class ValueContext {
 		}
 		return value;
 	}
+
+	/**
+	 * 获取符号
+	 * 
+	 * @param index
+	 *            符号索引
+	 * @return 符号
+	 */
+	public String getSymbol(int index) {
+		if (index < 0 || index > 9) {
+			index = 0;
+		}
+		return symbols[index];
+	}
+
 }
