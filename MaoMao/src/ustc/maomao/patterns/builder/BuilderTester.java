@@ -35,10 +35,22 @@ public class BuilderTester implements PatternTester {
 		}
 		
 		BuilderDirector director=new BuilderDirector();
-		JSONBuilder builder=new JSONBuilder();
-		director.setBuilder(builder);
+		
+		
+		JSONBuilder jsonBuilder=new JSONBuilder();
+		
+		director.setBuilder(jsonBuilder);
 		director.construct( dataSource);		
-		System.out.println(builder.getJsonText());		
+		
+		XMLBuilder xmlBuilder=new XMLBuilder();
+		director.setBuilder(xmlBuilder);
+		director.construct(dataSource);
+		
+		System.out.println(jsonBuilder.getJsonText().getText());
+		System.out.println("--------分割线--------------");
+		System.out.println(xmlBuilder.getXMLText().getText());
+		
+		
 	}
 
 }

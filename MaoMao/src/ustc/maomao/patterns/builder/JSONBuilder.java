@@ -24,8 +24,8 @@ public class JSONBuilder implements TextBuilder {
 	/**
 	 * @return 构造的json文本
 	 */
-	public String getJsonText() {
-		return json.getText();
+	public JSONText getJsonText() {
+		return json;
 	}
 
 	/*

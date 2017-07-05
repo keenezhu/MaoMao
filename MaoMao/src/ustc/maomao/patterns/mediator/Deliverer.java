@@ -1,5 +1,6 @@
 package ustc.maomao.patterns.mediator;
 
+import ustc.maomao.patterns.support.COSUser;
 import ustc.maomao.patterns.support.MealOrder;
 
 /**
@@ -14,7 +15,7 @@ import ustc.maomao.patterns.support.MealOrder;
  *         配送餐员类
  * 
  */
-public class Deliverer implements Colleague {
+public class Deliverer extends COSUser implements Colleague {
 
 	private ColleagueMediator mediator;// 仲裁者
 

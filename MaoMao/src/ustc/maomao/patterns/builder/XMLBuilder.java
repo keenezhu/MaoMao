@@ -26,8 +26,8 @@ public class XMLBuilder implements TextBuilder {
 	 * 获取xml文本
 	 * @return xml文本
 	 */
-	public String getXMLText(){		
-		return xml.getText();
+	public XMLText getXMLText(){		
+		return xml;
 	}
 
 	/* (non-Javadoc)
