@@ -16,12 +16,11 @@ import ustc.maomao.patterns.support.Data;
  */
 public class CrystalChartFac extends ChartFac {
 
-	/*
+	/**
 	 * (non-Javadoc)
 	 * 
-	 * @see
-	 * ustc.maomao.patterns.abstractfac.ChartFac#createLine(ustc.maomao.patterns
-	 * .abstractfac.Data)
+	 * @see ustc.maomao.patterns.abstractfac.ChartFac#createLine(ustc.maomao.patterns
+	 *      .abstractfac.Data)
 	 */
 	@Override
 	public Line createLine(Data data) {
@@ -31,12 +30,11 @@ public class CrystalChartFac extends ChartFac {
 		return line;
 	}
 
-	/*
+	/**
 	 * (non-Javadoc)
 	 * 
-	 * @see
-	 * ustc.maomao.patterns.abstractfac.ChartFac#createPie(ustc.maomao.patterns.
-	 * abstractfac.Data)
+	 * @see ustc.maomao.patterns.abstractfac.ChartFac#createPie(ustc.maomao.patterns.
+	 *      abstractfac.Data)
 	 */
 	@Override
 	public Pie createPie(Data data) {
@@ -46,12 +44,11 @@ public class CrystalChartFac extends ChartFac {
 		return pie;
 	}
 
-	/*
+	/**
 	 * (non-Javadoc)
 	 * 
-	 * @see
-	 * ustc.maomao.patterns.abstractfac.ChartFac#createBar(ustc.maomao.patterns.
-	 * abstractfac.Data)
+	 * @see ustc.maomao.patterns.abstractfac.ChartFac#createBar(ustc.maomao.patterns.
+	 *      abstractfac.Data)
 	 */
 	@Override
 	public Bar createBar(Data data) {

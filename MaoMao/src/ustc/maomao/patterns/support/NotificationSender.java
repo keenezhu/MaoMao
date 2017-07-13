@@ -44,7 +44,8 @@ public class NotificationSender {
 	}
 
 	/**
-	 * @param noti
+	 * 发送通知
+	 * @param noti 通知
 	 */
 	private void send(Notification noti) {
 		sendQueue.add(noti);

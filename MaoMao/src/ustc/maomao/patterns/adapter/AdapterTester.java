@@ -22,7 +22,8 @@ public class AdapterTester implements PatternTester {
 	@Override
 	public void test() {
 		MViewer mviewer=new MViewer();
-		MList dataSource=new MAdapter();
+		MData data=new MData();
+		MList dataSource=new MAdapter(data);
         mviewer.displayMenuList(dataSource);
 	}
 

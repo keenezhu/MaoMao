@@ -19,13 +19,19 @@ import ustc.maomao.patterns.support.MenuItem;
  *      
  */
 public class MAdapter implements MList {
+	
+	private MData mData;
+	
+	public MAdapter(MData data){
+		mData=data;
+	}
 
 	/* (non-Javadoc)
 	 * @see ustc.maomao.patterns.adapter.MList#getData()
 	 */
 	@Override
 	public List<HashMap<String, String>> getData() {
-		List<MenuItem> dataSource=new MData().getMenuItems();
+		List<MenuItem> dataSource=mData.getMenuItems();
 		List<HashMap<String,String>> data=new ArrayList<HashMap<String,String>>();
 		for(MenuItem item:dataSource){
 			HashMap<String,String> element=new HashMap<String,String>();

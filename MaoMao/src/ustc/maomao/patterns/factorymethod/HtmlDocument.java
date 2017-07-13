@@ -18,7 +18,7 @@ import ustc.maomao.patterns.support.Data;
  */
 public class HtmlDocument extends Document {
 	
-	private Data htmlFileFormatData;
+	private Data htmlFileFormatData;//html文件数据
 
 	/* (non-Javadoc)
 	 * @see ustc.maomao.patterns.factorymethod.Document#writeFileContent(java.io.FileOutputStream)

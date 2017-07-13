@@ -44,6 +44,11 @@ public class NotificationProtoManager {
 		manager.put("patron", new Notification(patronFooter));
 	}
 
+	/**
+	 * 根据通知类型获取原型对象
+	 * @param type 通知类型 
+	 * @return 对应类型的原型对象
+	 */
 	public static Notification getNotificationProto(String type) {
 		return manager.get(type);
 	}

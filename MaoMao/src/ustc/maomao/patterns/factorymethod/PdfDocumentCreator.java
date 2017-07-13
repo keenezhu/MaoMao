@@ -27,5 +27,4 @@ public class PdfDocumentCreator extends DocumentCreator {
 		pdf.setPdfFileFormatData(fileData);
 		return pdf;
 	}
-
 }

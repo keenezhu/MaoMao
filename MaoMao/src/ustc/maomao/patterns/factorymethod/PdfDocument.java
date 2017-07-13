@@ -18,7 +18,7 @@ import ustc.maomao.patterns.support.Data;
  */
 public class PdfDocument extends Document {
 	
-	private Data pdfFileFormatData;
+	private Data pdfFileFormatData;//pdf格式数据
 
 	/* (non-Javadoc)
 	 * @see ustc.maomao.patterns.factorymethod.Document#writeFileContent(java.io.FileOutputStream)
