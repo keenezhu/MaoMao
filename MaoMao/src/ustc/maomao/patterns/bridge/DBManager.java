@@ -24,7 +24,7 @@ public abstract class DBManager {
 	 * @return 持久化结果
 	 */
 	public boolean persist(Object o) {
-		log("插入一个对象");
+		log("插入一个对象",o);
 		return db.insert(o);
 	}
 
@@ -36,7 +36,7 @@ public abstract class DBManager {
 	 * @return 修改结果
 	 */
 	public boolean modify(Object o) {
-		log("修改一个对象");
+		log("修改一个对象",o);
 		return db.update(o);
 	}
 
@@ -48,7 +48,7 @@ public abstract class DBManager {
 	 * @return 移除结果
 	 */
 	public boolean remove(Object o) {
-		log("移除一个对象");
+		log("移除一个对象",o);
 		return db.delete(o);
 	}
 
@@ -60,7 +60,7 @@ public abstract class DBManager {
 	 * @return 获取的结果对象
 	 */
 	public Object get(Object o) {
-		log("获取一个对象");
+		log("获取一个对象",o);
 		return db.query(o);
 	}
 
@@ -76,6 +76,6 @@ public abstract class DBManager {
 	 * 数据库访问日志记录
 	 * @param operation 访问日志
 	 */
-	public abstract void log(String operation);
+	public abstract void log(String operation,Object o);
 
 }

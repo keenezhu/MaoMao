@@ -18,7 +18,7 @@ public class DBManagerWithXmlLog extends DBManager {
 	 * @see ustc.maomao.patterns.bridge.DBManager#log(java.lang.String)
 	 */
 	@Override
-	public void log(String operation) {		
+	public void log(String operation,Object o) {		
            System.out.println("<operation>"+operation+"</operation>");
 	}
 
