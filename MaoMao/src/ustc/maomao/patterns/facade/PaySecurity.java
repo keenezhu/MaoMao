@@ -1,7 +1,4 @@
-
-package ustc.maomao.patterns.abstractfac;
-
-import ustc.maomao.patterns.composite.StatisView;
+package ustc.maomao.patterns.facade;
 
 /**
  * @author Keene. Mail: waterzhj@ustc.edu.cn
@@ -12,9 +9,13 @@ import ustc.maomao.patterns.composite.StatisView;
  * 
  *         designed by Keene, implemented by {Keene}
  * 
- *         饼状图
+ *         保护支付安全类
  *      
  */
-public abstract class Pie implements StatisView{	
-
+public class PaySecurity {
+	
+	public static void detectMalware(){		 
+		//支付安全检查，并处理危险事件
 	}
+
+}

@@ -30,7 +30,7 @@ public class PayRollDeductionFacade {
 	 * @return 支付结果
 	 */
 	public boolean pay(MealOrder o){
-		
+		PaySecurity.detectMalware();
 		boolean result=account.expense();
 		pl.payLog(result);
 		if(result){

@@ -32,8 +32,6 @@ public class CrystalPie extends Pie {
 	 */
 	public void setData(Data data) {
 		this.data = data;
-	}
-	
-	
+	}	
 
 }
