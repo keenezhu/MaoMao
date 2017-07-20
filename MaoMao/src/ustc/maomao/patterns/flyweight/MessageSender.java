@@ -30,10 +30,9 @@ public class MessageSender {
 	/**
 	 * 根据接收者列表发送消息
 	 */
-	public void sendGreetingMessage() {
-		GreetingMessageFac fac = new GreetingMessageFac();
+	public void sendGreetingMessage() {		
 		for (Patron p : receivers) {
-			IMessage message = fac.obtainMessage(p.getLevel());
+			IMessage message = GreetingMessageFac.obtainMessage(p.getLevel());
 			message.send(p);
 		}
 	}

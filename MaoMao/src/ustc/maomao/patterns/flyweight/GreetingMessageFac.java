@@ -18,43 +18,38 @@ import ustc.maomao.patterns.support.PatronLevel;
  * 
  */
 public class GreetingMessageFac {
-	HashMap<PatronLevel, IMessage> messagePool = new HashMap<PatronLevel, IMessage>();//消息池
+	private static HashMap<PatronLevel, IMessage> messagePool = new HashMap<PatronLevel, IMessage>();// 消息池
 
 	/**
 	 * 根据客户等级构造返回消息池中的享元消息
-	 * @param level 客户等级
+	 * 
+	 * @param level
+	 *            客户等级
 	 * @return 享元消息
 	 */
-	public IMessage obtainMessage(PatronLevel level) {
-		IMessage m = null;
-		switch (level) {
-		case Normal: {
-			m = messagePool.get(PatronLevel.Normal);
-			if (m == null) {
+	public static IMessage obtainMessage(PatronLevel level) {
+		IMessage m = messagePool.get(level);
+		if (m == null) {
+			switch (level) {
+			case Normal: {
 				Header h = new Header(PatronLevel.Normal);
 				m = new GreetingMessage(h);
 				messagePool.put(PatronLevel.Normal, m);
+				break;
 			}
-			break;
-		}
-		case VIP: {
-			m = messagePool.get(PatronLevel.VIP);
-			if (m == null) {
+			case VIP: {
 				Header h = new Header(PatronLevel.VIP);
 				m = new GreetingMessage(h);
 				messagePool.put(PatronLevel.VIP, m);
+				break;
 			}
-			break;
-		}
-		case SVIP: {
-			m = messagePool.get(PatronLevel.SVIP);
-			if (m == null) {
+			case SVIP: {
 				Header h = new Header(PatronLevel.SVIP);
 				m = new GreetingMessage(h);
 				messagePool.put(PatronLevel.SVIP, m);
+				break;
 			}
-			break;
-		}
+			}
 		}
 		return m;
 	}
