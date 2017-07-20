@@ -16,13 +16,8 @@ import ustc.maomao.patterns.support.Patron;
  */
 public interface IMessage {
     /**
-     * 设置消息接收客户
-     * @param p 客户对象
-     */
-    public void setReceiver(Patron p);
-    /**
      * 发送消息
      * @return 发送结果
      */
-    public boolean send();
+    public boolean send(Patron receiver);
 }

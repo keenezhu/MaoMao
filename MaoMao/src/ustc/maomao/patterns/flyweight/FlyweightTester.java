@@ -34,15 +34,18 @@ public class FlyweightTester implements PatternTester {
 			Patron p = new Patron();
 			if (i % 7 == 0) {
 				p.setLevel(PatronLevel.VIP);
+				p.setName("vip"+i);
 			} else if (i % 5 == 0) {
 				p.setLevel(PatronLevel.SVIP);
+				p.setName("svip"+i);
 			} else {
 				p.setLevel(PatronLevel.Normal);
+				p.setName("noraml"+i);
 			}
 			patrons.add(p);
 		}
 		ms.setReceivers(patrons);
-		ms.send();
+		ms.sendGreetingMessage();
 	}
 
 }
