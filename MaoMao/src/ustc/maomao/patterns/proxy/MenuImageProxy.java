@@ -17,18 +17,19 @@ import java.util.Random;
 public class MenuImageProxy implements MenuImage {
 	
 	private RealMenuImage subject;//目标菜单项图片
-	
+	private ImageUpdater callback;//回调接口对象
 	
 	/* (non-Javadoc)
 	 * @see ustc.maomao.patterns.proxy.MenuImage#show()
 	 */
 	@Override
-	public void show() {	
+	public void show(ImageUpdater updater) {
+		callback=updater;
 		if(subject==null){
         System.out.println("显示菜单项代理图片");
         new Thread(new LazyLoadingTask()).start();        
 		}else{
-			subject.show();
+			subject.show(callback);
 		}
 	}
 	
@@ -52,7 +53,7 @@ public class MenuImageProxy implements MenuImage {
 				e.printStackTrace();
 			}
 			subject=new RealMenuImage();
-			subject.show();
+			subject.show(callback);
 		}
 		
 	}

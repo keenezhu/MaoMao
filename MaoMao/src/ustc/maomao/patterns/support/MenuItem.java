@@ -1,5 +1,6 @@
 package ustc.maomao.patterns.support;
 
+import ustc.maomao.patterns.proxy.ImageUpdater;
 import ustc.maomao.patterns.proxy.MenuImage;
 
 /**
@@ -14,7 +15,7 @@ import ustc.maomao.patterns.proxy.MenuImage;
  *         COS菜单项类型
  *      
  */
-public class MenuItem {
+public class MenuItem implements ImageUpdater{
 	
 	private int mType;//菜单项类型
 	private String mName;//菜单项名称
@@ -65,7 +66,14 @@ public class MenuItem {
 	
 	public void display(){
 		System.out.println("菜品："+mName+"\n价格："+mPrice);
-		mImage.show();
+		mImage.show(this);
+	}
+	/* (non-Javadoc)
+	 * @see ustc.maomao.patterns.proxy.ImageUpdater#update()
+	 */
+	@Override
+	public void update() {
+		System.out.println("图片已刷新！");		
 	}	
 
 }

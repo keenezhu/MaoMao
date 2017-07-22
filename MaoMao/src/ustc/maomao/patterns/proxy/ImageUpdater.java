@@ -9,14 +9,12 @@ package ustc.maomao.patterns.proxy;
  * 
  *         designed by Keene, implemented by {Keene}
  * 
- *         菜品图片
+ *         图片刷新的回调接口
  *      
  */
-public interface MenuImage {
-     
-    /**
-     * 显示图片
-     * @param iu 回调图片刷新接口
-     */
-    public void show(ImageUpdater iu);
+public interface ImageUpdater {	
+	/**
+	 * 刷新方法
+	 */
+	public void update();
 }
