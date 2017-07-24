@@ -18,6 +18,11 @@ public abstract class OrderValidator {
 	
 	private OrderValidator successor;// 后继
 
+	/**
+	 * 验证行为
+	 * @param o 订单
+	 * @return 验证结果
+	 */
 	public abstract boolean valid(MealOrder o);
 	
 	/**
