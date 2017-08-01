@@ -14,14 +14,14 @@ import ustc.maomao.patterns.support.MealOrder;
  * 
  *         designed by Keene, implemented by {Keene}
  * 
- *         待审核订单
+ *         未审核订单
  * 
  */
 public class PendingOrders {
 
 	private List<MealOrder> orderSet = new ArrayList<MealOrder>();// 聚合订单
 
-	private int modified = 0;
+	private int modified = 0;//orderSet修改指示器变量
 
 	/**
 	 * 向orderSet中添加订单
