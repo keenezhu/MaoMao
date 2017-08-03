@@ -60,7 +60,7 @@ public class EmailObserver implements NewsObserver {
 	 * support.Patron)
 	 */
 	@Override
-	public void remove(Patron p) {
+	public void removePatron(Patron p) {
 		// TODO Auto-generated method stub
 		patrons.remove(p);
 	}

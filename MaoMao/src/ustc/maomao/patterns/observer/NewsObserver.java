@@ -32,6 +32,6 @@ public interface NewsObserver {
 	 * 移除订阅客户
 	 * @param p 客户
 	 */
-	public void remove(Patron p);
+	public void removePatron(Patron p);
 	
 }
