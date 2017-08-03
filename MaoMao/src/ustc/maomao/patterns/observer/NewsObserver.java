@@ -1,5 +1,7 @@
 package ustc.maomao.patterns.observer;
 
+import ustc.maomao.patterns.support.Patron;
+
 /**
  * @author Keene. Mail: waterzhj@ustc.edu.cn
  * 
@@ -13,9 +15,23 @@ package ustc.maomao.patterns.observer;
  * 
  */
 public interface NewsObserver {
+	
 	/**
 	 * 观察者收到新闻执行的行为
 	 * @param message 新闻
 	 */
 	public void update(News message);
+	
+	/**
+	 * 添加订阅客户
+	 * @param p 客户
+	 */
+	public void addPatron(Patron p);
+	
+	/**
+	 * 移除订阅客户
+	 * @param p 客户
+	 */
+	public void remove(Patron p);
+	
 }

@@ -1,5 +1,10 @@
 package ustc.maomao.patterns.observer;
 
+import java.util.ArrayList;
+import java.util.List;
+
+import ustc.maomao.patterns.support.Patron;
+
 /**
  * @author Keene. Mail: waterzhj@ustc.edu.cn
  * 
@@ -10,17 +15,54 @@ package ustc.maomao.patterns.observer;
  *         designed by Keene, implemented by {Keene}
  * 
  *         短信订阅新闻的观察者类
- *      
+ * 
  */
 public class SMSObserver implements NewsObserver {
 
-	/* (non-Javadoc)
-	 * @see ustc.maomao.patterns.observer.NewsObserver#update(ustc.maomao.patterns.observer.News)
+	private List<Patron> patrons = new ArrayList<Patron>();
+
+	/*
+	 * (non-Javadoc)
+	 * 
+	 * @see
+	 * ustc.maomao.patterns.observer.NewsObserver#update(ustc.maomao.patterns.
+	 * observer.News)
 	 */
 	@Override
 	public void update(News message) {
+		for (Patron p : patrons) {
+			sendSMS(p,message);
+		}
+	}
+
+	private void sendSMS(Patron p,News message) {
+		System.out.println(p.getName() + "收到SMS新闻!");
+	}
+
+	/*
+	 * (non-Javadoc)
+	 * 
+	 * @see
+	 * ustc.maomao.patterns.observer.NewsObserver#addPatron(ustc.maomao.patterns
+	 * .support.Patron)
+	 */
+	@Override
+	public void addPatron(Patron p) {
 		// TODO Auto-generated method stub
-		System.out.println("收到新闻，根据SMS方式执行行为！");
+		patrons.add(p);
+	}
+
+	/*
+	 * (non-Javadoc)
+	 * 
+	 * @see
+	 * ustc.maomao.patterns.observer.NewsObserver#remove(ustc.maomao.patterns.
+	 * support.Patron)
+	 */
+	@Override
+	public void remove(Patron p) {
+		// TODO Auto-generated method stub
+		patrons.remove(p);
 	}
 
 }
