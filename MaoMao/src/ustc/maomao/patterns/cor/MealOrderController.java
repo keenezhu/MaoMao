@@ -1,6 +1,7 @@
 package ustc.maomao.patterns.cor;
 
 import ustc.maomao.patterns.support.MealOrder;
+import ustc.maomao.patterns.visitor.FoodLevelVisitor;
 import ustc.maomao.patterns.visitor.FoodTypeVisitor;
 import ustc.maomao.patterns.visitor.MealOrderVisitor;
 
@@ -43,16 +44,18 @@ public class MealOrderController {
 	/**
 	 * 显示订单菜品统计信息
 	 */
-	public void dispayOrderStatis(MealOrder order,MealOrderVisitor visitor) {		
-		order.accept(visitor);
-		((FoodTypeVisitor)visitor).displayResult();
+	public void dispayOrderStatis(MealOrder order) {
+		FoodTypeVisitor typeVisitor=new FoodTypeVisitor();
+		order.accept(typeVisitor);
+		typeVisitor.displayResult();
 	}
 
 	/**
 	 * 检查订单并提醒客户关于菜品的信息
 	 */
-	public void warningOrder(MealOrder order,MealOrderVisitor visitor) {		
-		order.accept(visitor);
+	public void warningOrder(MealOrder order) {
+		FoodLevelVisitor levelVisitor=new FoodLevelVisitor();
+		order.accept(levelVisitor);
 	}	
 	
 }

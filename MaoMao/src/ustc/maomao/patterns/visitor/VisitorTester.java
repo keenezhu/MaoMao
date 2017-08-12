@@ -27,11 +27,9 @@ public class VisitorTester implements PatternTester{
 		// TODO Auto-generated method stub
 		Patron p=new Patron();
 		MealOrder order=p.orderFood();
-		MealOrderController controller=new MealOrderController();
-		MealOrderVisitor typeVisitor=new FoodTypeVisitor();
-		controller.dispayOrderStatis(order,typeVisitor);
-		MealOrderVisitor levelVisitor=new FoodLevelVisitor();
-		controller.warningOrder(order,levelVisitor);
+		MealOrderController controller=new MealOrderController();		
+		controller.dispayOrderStatis(order);		
+		controller.warningOrder(order);
 	}
 
 }
