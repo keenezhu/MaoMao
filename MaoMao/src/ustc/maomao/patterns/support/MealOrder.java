@@ -98,6 +98,14 @@ public class MealOrder {
 	public void addFood(FoodItem food) {
 		foods.add(food);
 	}
+	
+	/**
+	 * 删除指定的菜品
+	 * @param food
+	 */
+	public void removeFood(FoodItem food){
+		foods.remove(food);
+	}
 
 	/**
 	 * 访问订单菜品
