@@ -32,12 +32,12 @@ public class NotificationSender {
 	/**
 	 * 通过通知原型对象复制，完成新通知对象创建
 	 */
-	public void sendNotification(String title, String content) {
+	public void sendNotification(String title, String content, Employee receiver) {
 
 		Notification notification = notiProto.clone();
 		notification.setContent(content);
 		notification.setTitle(title);
-		send(notification);
+		send(notification, receiver);
 
 		System.out.println(title + " 通知已发送！");
 
@@ -45,10 +45,12 @@ public class NotificationSender {
 
 	/**
 	 * 发送通知
-	 * @param noti 通知
+	 * 
+	 * @param noti
+	 *            通知
 	 */
-	private void send(Notification noti) {
-		sendQueue.add(noti);
+	private void send(Notification noti, Employee receiver) {
+
 		// other operations
 	}
 

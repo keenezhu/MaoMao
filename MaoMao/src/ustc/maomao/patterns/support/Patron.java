@@ -24,7 +24,7 @@ import ustc.maomao.patterns.visitor.FoodTypeVisitor;
  *         订餐客户
  * 
  */
-public class Patron extends COSUser implements Colleague {
+public class Patron extends Employee implements Colleague {
 
 	private PatronLevel level;// 客户等级
 

@@ -9,9 +9,9 @@ package ustc.maomao.patterns.support;
  * 
  *         designed by Keene, implemented by {Keene}
  * 
- *         COS系统用户
+ *         COS系统雇员角色
  *      
  */
-public class COSUser {
+public class Employee {
 
 }

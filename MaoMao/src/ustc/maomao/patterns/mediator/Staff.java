@@ -5,7 +5,7 @@ import ustc.maomao.patterns.iterator.PendingOrders;
 import ustc.maomao.patterns.memento.CareTaker;
 import ustc.maomao.patterns.state.OrderState;
 import ustc.maomao.patterns.state.PlacedState;
-import ustc.maomao.patterns.support.COSUser;
+import ustc.maomao.patterns.support.Employee;
 import ustc.maomao.patterns.support.MealOrder;
 
 /**
@@ -20,7 +20,7 @@ import ustc.maomao.patterns.support.MealOrder;
  *         餐厅员工类
  * 
  */
-public class Staff extends COSUser implements Colleague {
+public class Staff extends Employee implements Colleague {
 
 	private ColleagueMediator mediator;// 仲裁者
 	private CareTaker caretaker;// 订单备忘录守护者

@@ -1,8 +1,6 @@
 
 package ustc.maomao.patterns.prototype;
 
-import ustc.maomao.patterns.support.COSUser;
-
 /**
  * @author Keene. Mail: waterzhj@ustc.edu.cn
  * 
@@ -19,12 +17,11 @@ public class Notification implements Cloneable {
 
 	private String title;
 	private String content;
-	private COSUser receiver;
 
 	private NotificationFooter footer;
 
-	Notification(NotificationFooter foo) {
-		footer = foo;
+	Notification(NotificationFooter foot) {
+		footer = foot;
 	}
 
 	/*
@@ -72,21 +69,6 @@ public class Notification implements Cloneable {
 	 */
 	public void setContent(String content) {
 		this.content = content;
-	}
-
-	/**
-	 * @return the receiver
-	 */
-	public COSUser getReceiver() {
-		return receiver;
-	}
-
-	/**
-	 * @param receiver
-	 *            the receiver to set
-	 */
-	public void setReceiver(COSUser receiver) {
-		this.receiver = receiver;
 	}
 
 }

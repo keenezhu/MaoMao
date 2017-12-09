@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
+import ustc.maomao.patterns.support.Employee;
 import ustc.maomao.patterns.support.NotificationSender;
 import ustc.maomao.patterns.support.PatternTester;
 
@@ -29,25 +30,29 @@ public class ProtoTester implements PatternTester {
 	 */
 	@Override
 	public void test() {
-		List<HashMap<String, String>> dataSource = new ArrayList<HashMap<String, String>>();
+		List<HashMap<String, Object>> dataSource = new ArrayList<HashMap<String, Object>>();
 		// 构造测试通知的数据源
 		for (int i = 0; i < 100; i++) {
 
-			HashMap<String, String> data = new HashMap<String, String>();
+			HashMap<String, Object> data = new HashMap<String, Object>();
 			if ((i % 3) == 0) {
 				data.put("title", "order gernerated");
 				data.put("content", "noti content");
+				data.put("receiver", new Employee());
+
 			} else {
 				data.put("title", "order finished");
 				data.put("content", "noti content");
+				data.put("receiver", new Employee());
 			}
 			dataSource.add(data);
 		}
 		// 使用通知发送器发送通知
 		NotificationSender ns = new NotificationSender(NotificationProtoManager.getNotificationProto("order"));
 
-		for (HashMap<String, String> data : dataSource) {
-			ns.sendNotification(data.get("title"), data.get("content"));
+		for (HashMap<String, Object> data : dataSource) {
+			ns.sendNotification((String) data.get("title"), (String) data.get("content"),
+					(Employee) data.get("receiver"));
 		}
 
 	}
