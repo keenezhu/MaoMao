@@ -96,14 +96,16 @@ public class Patron extends Employee implements Colleague {
 	 * @param po
 	 *            支付方式
 	 */
-	public void pay() {
-		if (payOption.check(order) != null) {
+	public PayBill pay() {
+		PayBill pb = payOption.check(order);
+		if (pb != null) {
 			System.out.println("支付成功！");
 			order.setPaid(true);
 		} else {
 			System.out.println("支付不成功！");
 			order.setPaid(false);
 		}
+		return pb;
 	}
 
 	/**
