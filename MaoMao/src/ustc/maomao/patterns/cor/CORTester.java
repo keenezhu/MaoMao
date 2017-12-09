@@ -45,7 +45,8 @@ public class CORTester implements PatternTester {
         p1.setLoginState(true);
         MealOrder p1Order=p1.orderFood();
         PayOrder po=new PayCard();
-        p1.pay(po);
+        p1.setPayOption(po);
+        p1.pay();
         orderController.validateOrder(p1Order);
         /**
 		 * 客户p2下订单

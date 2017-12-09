@@ -9,7 +9,7 @@ package ustc.maomao.patterns.facade;
  * 
  *         designed by Keene, implemented by {Keene}
  * 
- *         账单
+ *         工资抵扣账单
  *      
  */
 public class Bill {
@@ -22,7 +22,7 @@ public class Bill {
 public Bill createBill(){
 	   Bill bill=new Bill();
 	   //生成账单
-	   System.out.println("账单已生成！");
+	   System.out.println("工资抵扣账单已生成！");
 	   return bill;
    }
 }

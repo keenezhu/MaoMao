@@ -1,6 +1,7 @@
 package ustc.maomao.patterns.templatemethod;
 
 import ustc.maomao.patterns.support.MealOrder;
+import ustc.maomao.patterns.support.PayBill;
 
 /**
  * @author Keene. Mail: waterzhj@ustc.edu.cn
@@ -11,7 +12,7 @@ import ustc.maomao.patterns.support.MealOrder;
  * 
  *         designed by Keene, implemented by {Keene}
  * 
- *         订单结算接口
+ *         订单结算抽象类
  * 
  */
 public abstract class PayOrder {
@@ -23,19 +24,15 @@ public abstract class PayOrder {
 	 *            菜品订单
 	 * @return 结帐结果
 	 */
-	public final boolean check(MealOrder o) {
-		boolean result;
+	public final PayBill check(MealOrder o) {
+		PayBill pb = null;
 		if (confirm(o)) {
 			if (pay(o)) {
 				getReceipt(o);
-				result = true;
-			} else {
-				result = false;
+				pb = new PayBill();
 			}
-		} else {
-			result = false;
 		}
-		return result;
+		return pb;
 	}
 
 	/**

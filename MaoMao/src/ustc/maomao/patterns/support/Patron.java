@@ -34,7 +34,7 @@ public class Patron extends Employee implements Colleague {
 
 	private String name;// 客户名称
 
-
+	private PayOrder payOption;// 支付方式
 
 	private ColleagueMediator mediator;// 仲裁者
 
@@ -54,8 +54,6 @@ public class Patron extends Employee implements Colleague {
 	public void requestDelivery() {
 		mediator.mediate(this);
 	}
-
-
 
 	/**
 	 * 订餐
@@ -98,8 +96,8 @@ public class Patron extends Employee implements Colleague {
 	 * @param po
 	 *            支付方式
 	 */
-	public void pay(PayOrder po) {
-		if (po.check(order)) {
+	public void pay() {
+		if (payOption.check(order) != null) {
 			System.out.println("支付成功！");
 			order.setPaid(true);
 		} else {
@@ -160,15 +158,25 @@ public class Patron extends Employee implements Colleague {
 		return order;
 	}
 
-	/* (non-Javadoc)
-	 * @see ustc.maomao.patterns.mediator.Colleague#setMediator(ustc.maomao.patterns.mediator.ColleagueMediator)
+	/*
+	 * (non-Javadoc)
+	 * 
+	 * @see
+	 * ustc.maomao.patterns.mediator.Colleague#setMediator(ustc.maomao.patterns.
+	 * mediator.ColleagueMediator)
 	 */
 	@Override
 	public void setMediator(ColleagueMediator media) {
 		// TODO Auto-generated method stub
-		mediator=media;
+		mediator = media;
 	}
 
-	
+	/**
+	 * @param payOption
+	 *            the payOption to set
+	 */
+	public void setPayOption(PayOrder payOption) {
+		this.payOption = payOption;
+	}
 
 }

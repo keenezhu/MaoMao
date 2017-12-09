@@ -23,8 +23,11 @@ public class TemplateMethodTester implements PatternTester {
 	@Override
 	public void test() {
 		Patron p=new Patron();
+		p.setLoginState(true);
+		p.orderFood();		
 		PayOrder po=new PayCard();
-        p.pay(po);
+		p.setPayOption(po);
+        p.pay();
 	}
 
 }

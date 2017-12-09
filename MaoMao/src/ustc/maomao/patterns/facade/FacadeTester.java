@@ -26,8 +26,11 @@ public class FacadeTester implements PatternTester {
 	@Override
 	public void test() {
 		Patron p=new Patron();
+		p.setLoginState(true);
 		PayOrder po=new PayPayRollDeduction();
-        p.pay(po);
+		p.setPayOption(po);		
+		p.orderFood();
+        p.pay();
 	}
 
 }

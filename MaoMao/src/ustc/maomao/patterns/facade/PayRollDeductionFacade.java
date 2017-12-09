@@ -15,7 +15,7 @@ import ustc.maomao.patterns.support.MealOrder;
  *      
  */
 public class PayRollDeductionFacade {
-	private Bill bill;//账单
+	private Bill bill;//内部账单
 	private Account account;//账户
 	private PayLogger pl;//支付日志
 	
