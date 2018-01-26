@@ -19,11 +19,6 @@ public interface OrderState extends Cloneable {
 	/**
 	 * 状态行为
 	 */
-	public void handle();
-
-	/* (non-Javadoc)
-	 * @see java.lang.Object#clone()
-	 */
-	public Object clone() throws CloneNotSupportedException;	
+	public void handle();	
 
 }
