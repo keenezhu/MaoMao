@@ -31,9 +31,9 @@ public class MealOrder {
 	}
 
 	/**
-	 * 依据状态而变化的订单行为
+	 * 依据状态而变化的"取消"订单行为
 	 */
-	public void go() {
+	public void cancel() {
 		state.handle();
 	}
 

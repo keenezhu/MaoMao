@@ -11,16 +11,21 @@ import ustc.maomao.patterns.support.Patron;
  * 
  *         designed by Keene, implemented by {Keene}
  * 
- *         新闻观察者接口
- * 
+ *         订阅客户管理接口
+ *      
  */
-public interface NewsObserver {
+public interface IManageSubscriber {
+
+	/**
+	 * 添加订阅客户
+	 * @param p 客户
+	 */
+	public void addPatron(Patron p);
 	
 	/**
-	 * 观察者收到新闻执行的行为
-	 * @param message 新闻
+	 * 移除订阅客户
+	 * @param p 客户
 	 */
-	public void update(News message);	
-	
+	public void removePatron(Patron p);
 	
 }

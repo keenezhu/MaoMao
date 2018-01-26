@@ -1,5 +1,6 @@
 package ustc.maomao.patterns.observer;
 
+import ustc.maomao.patterns.support.Patron;
 import ustc.maomao.patterns.support.PatternTester;
 
 /**
@@ -16,22 +17,29 @@ import ustc.maomao.patterns.support.PatternTester;
  */
 public class ObserverTester implements PatternTester {
 
-	/* (non-Javadoc)
+	/*
+	 * (non-Javadoc)
+	 * 
 	 * @see ustc.maomao.patterns.support.PatternTester#test()
 	 */
 	@Override
 	public void test() {
 		// TODO Auto-generated method stub
-		
-		NewsPublisher publisher=new NewsPublisher();
-		NewsObserver email1=new EmailObserver();
-		NewsObserver email2=new EmailObserver();
-		NewsObserver sms1=new SMSObserver();
-		
+
+		Patron newsSubscriber = new Patron();
+		newsSubscriber.setName("news subscriber");
+
+		NewsPublisher publisher = new NewsPublisher();
+
+		EmailObserver email1 = new EmailObserver();
+		email1.addPatron(newsSubscriber);
+
+		SMSObserver sms1 = new SMSObserver();
+		sms1.addPatron(newsSubscriber);
+
 		publisher.addObserver(sms1);
 		publisher.addObserver(email1);
-		publisher.addObserver(email2);
-		
+
 		publisher.generateNews();
 	}
 

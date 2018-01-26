@@ -18,13 +18,5 @@ public abstract class NonterminalExpression implements ValueExpression{
 		left=lexp;
 		right=rexp;
 	}
-	/* (non-Javadoc)
-	 * @see ustc.maomao.patterns.interpreter.ValueExpression#interpret(ustc.maomao.patterns.interpreter.ValueContext)
-	 */
-	@Override
-	public int interpret(ValueContext con) {
-		// TODO Auto-generated method stub
-		return 0;
-	}	
 	
 }

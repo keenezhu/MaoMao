@@ -1,7 +1,7 @@
 package ustc.maomao.patterns.memento;
 
 import ustc.maomao.patterns.mediator.Staff;
-import ustc.maomao.patterns.state.PlacedState;
+import ustc.maomao.patterns.state.PlacingState;
 import ustc.maomao.patterns.state.PreparedState;
 import ustc.maomao.patterns.support.MealOrder;
 import ustc.maomao.patterns.support.Patron;
@@ -31,7 +31,7 @@ public class MementoTester implements PatternTester {
 		//生成订单
 		Patron p = new Patron();
 		MealOrder o = p.orderFood();
-        o.setState(new PlacedState(o));
+        o.setState(new PlacingState(o));
        
 		Staff staff=new Staff();
 		staff.setOrder(o);

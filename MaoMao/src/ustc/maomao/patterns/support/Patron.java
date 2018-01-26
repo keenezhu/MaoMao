@@ -7,7 +7,7 @@ import ustc.maomao.patterns.mediator.Colleague;
 import ustc.maomao.patterns.mediator.ColleagueMediator;
 import ustc.maomao.patterns.memento.CareTaker;
 import ustc.maomao.patterns.state.OrderState;
-import ustc.maomao.patterns.state.PlacedState;
+import ustc.maomao.patterns.state.PlacingState;
 import ustc.maomao.patterns.templatemethod.PayOrder;
 import ustc.maomao.patterns.visitor.FoodLevelVisitor;
 import ustc.maomao.patterns.visitor.FoodTypeVisitor;

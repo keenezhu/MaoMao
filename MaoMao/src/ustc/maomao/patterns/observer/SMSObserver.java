@@ -17,7 +17,7 @@ import ustc.maomao.patterns.support.Patron;
  *         短信订阅新闻的观察者类
  * 
  */
-public class SMSObserver implements NewsObserver {
+public class SMSObserver implements NewsObserver,IManageSubscriber {
 
 	private List<Patron> patrons = new ArrayList<Patron>();
 
@@ -39,26 +39,14 @@ public class SMSObserver implements NewsObserver {
 		System.out.println(p.getName() + "收到SMS新闻!");
 	}
 
-	/*
-	 * (non-Javadoc)
-	 * 
-	 * @see
-	 * ustc.maomao.patterns.observer.NewsObserver#addPatron(ustc.maomao.patterns
-	 * .support.Patron)
-	 */
+	
 	@Override
 	public void addPatron(Patron p) {
 		// TODO Auto-generated method stub
 		patrons.add(p);
 	}
 
-	/*
-	 * (non-Javadoc)
-	 * 
-	 * @see
-	 * ustc.maomao.patterns.observer.NewsObserver#remove(ustc.maomao.patterns.
-	 * support.Patron)
-	 */
+	
 	@Override
 	public void removePatron(Patron p) {
 		// TODO Auto-generated method stub

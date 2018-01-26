@@ -28,13 +28,13 @@ public class StateTester implements PatternTester {
 		Patron p = new Patron();
 		MealOrder o = p.orderFood();
 		//订单已生成
-		OrderState placed = new PlacedState(o);
-		o.setState(placed);
-		o.go();
+		OrderState placing = new PlacingState(o);
+		o.setState(placing);
+		o.cancel();
 		//订单已准备好
 		OrderState prepared = new PreparedState(o);
 		o.setState(prepared);
-		o.go();
+		o.cancel();
 	}
 
 }

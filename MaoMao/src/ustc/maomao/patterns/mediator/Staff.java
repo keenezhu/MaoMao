@@ -4,7 +4,7 @@ import ustc.maomao.patterns.iterator.OrderIterator;
 import ustc.maomao.patterns.iterator.PendingOrders;
 import ustc.maomao.patterns.memento.CareTaker;
 import ustc.maomao.patterns.state.OrderState;
-import ustc.maomao.patterns.state.PlacedState;
+import ustc.maomao.patterns.state.PlacingState;
 import ustc.maomao.patterns.support.Employee;
 import ustc.maomao.patterns.support.MealOrder;
 
@@ -95,11 +95,11 @@ public class Staff extends Employee implements Colleague {
 		OrderIterator iterator = orders.iterate();
 		MealOrder order = iterator.first();
 		if (order != null) {
-			order.setState(new PlacedState(order));
+			order.setState(new PlacingState(order));
 			System.out.println(order.getCustomer().getName() + "订单已审核！");
 			while (iterator.hasNext()) {
 				order = iterator.down();
-				order.setState(new PlacedState(order));
+				order.setState(new PlacingState(order));
 				System.out.println(order.getCustomer().getName() + "订单已审核！");
 			}
 		}

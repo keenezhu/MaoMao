@@ -32,7 +32,7 @@ public class NewsPublisher {
 	 */
 	private void notifyObserver() {
 		for (NewsObserver o : observers) {
-			o.update(news);
+			o.update(news);			
 		}
 	}
 

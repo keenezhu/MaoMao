@@ -27,8 +27,9 @@ public class PreparedState implements OrderState {
 	 * @see ustc.maomao.patterns.state.OrderState#handle()
 	 */
 	@Override
-	public void handle() {		
-        System.out.println("order is prepared!");
+	public void handle() {	
+		context.setState(new CanceledState());
+        System.out.println("订单已取消，将返还订单总金额的30%！");
 	}
 
 	/* (non-Javadoc)

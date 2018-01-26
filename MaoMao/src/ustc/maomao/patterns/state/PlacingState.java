@@ -11,15 +11,15 @@ import ustc.maomao.patterns.support.MealOrder;
  * 
  *         designed by Keene, implemented by {Keene}
  * 
- *         Placed状态类
+ *         Placing状态类
  * 
  */
-public class PlacedState implements OrderState {
+public class PlacingState implements OrderState {
 	private MealOrder context;// 状态上下文
 
-	public PlacedState(MealOrder con) {
+	public PlacingState(MealOrder con) {
 		context = con;
-		System.out.println("订单是Placed状态！");
+		System.out.println("订单是Placing状态！");
 	}
 
 	/*
@@ -29,7 +29,8 @@ public class PlacedState implements OrderState {
 	 */
 	@Override
 	public void handle() {
-		System.out.println("order is placed!");
+		context.setState(new CanceledState());
+		System.out.println("订单已取消");
 	}
 
 	/*

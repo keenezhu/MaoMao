@@ -11,28 +11,23 @@ import ustc.maomao.patterns.support.MealOrder;
  * 
  *         designed by Keene, implemented by {Keene}
  * 
- *         Finished状态类
- * 
+ *         Canceled状态类
+ *      
  */
-public class FinishedState implements OrderState {
-
-	private MealOrder context;// 状态上下文
-
-	public FinishedState(MealOrder con) {
-		context = con;
-		System.out.println("订单是Finished状态！");
+public class CanceledState implements OrderState {	
+	
+	public CanceledState() {		
+		System.out.println("订单是Canceled状态！");
 	}
 
-	/*
-	 * (non-Javadoc)
-	 * 
+	/* (non-Javadoc)
 	 * @see ustc.maomao.patterns.state.OrderState#handle()
 	 */
 	@Override
-	public void handle() {
-		System.out.println("订单不可取消！");
+	public void handle() {		
+          System.out.println("order is canceled!");
 	}
-
+	
 	/*
 	 * (non-Javadoc)
 	 * 
