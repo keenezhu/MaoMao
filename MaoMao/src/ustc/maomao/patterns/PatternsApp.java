@@ -24,7 +24,7 @@ public class PatternsApp {
 	
 	public static void main(String[] args) {		
 			
-		//将SingletonTester替换成目标模式测试器
+		//将VisitorTester替换成目标模式测试器
 		PatternTester pt=new VisitorTester();
 		pt.test();		
 	}
